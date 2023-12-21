@@ -1,22 +1,24 @@
-# Better-Animations
-A minecraft addon that overhauls all the player animations in the game!
+✨ Better-Animations ✨
+Overhaul your Minecraft player animations and bring them to life!
 
-#Installation
+# Installation
+Download the latest Better_Animations.zip from the releases tab.
+Place it in your resourcepacks folder.
+Activate it in the resource packs tab in-game.
 
---> Download the latest Better_Animations.zip from the releases tab.
---> Paste it in your 'resourcepacks folder'.
---> Load it from the 'resource packs' tab in game.
+# Requirements ️
+Fabric Modloader: https://mvnrepository.com/artifact/net.fabricmc
+Fabric API: https://www.curseforge.com/minecraft/mc-mods/fabric-api
+Entity Model Features: https://modrinth.com/mod/cem
+Entity Texture Features: https://github.com/Traben-0/Entity_Texture_Features
 
-#Before Installation
+# Links:
+Fabric API: https://www.curseforge.com/minecraft/mc-mods/fabric-api
+Entity Model Features: https://modrinth.com/mod/cem
+Entity Texture Features: https://github.com/Traben-0/Entity_Texture_Features
 
---> Depends on Fabric Modloader, Fabric Api, Entity Model Features, Entity Texture Features.
---> Links
-https://modrinth.com/mod/entity-model-features
-https://modrinth.com/mod/entitytexturefeatures
-https://modrinth.com/mod/fabric-api
-https://fabricmc.net
+# Note: 
+Forge and Optifine support is not currently planned.
 
-Thanks :)
-
-No, Forge and Optifine support is currently unplanned
-Should work with all fabric mods
+# Compatibility: 
+Should work with all Fabric mods!
