@@ -1,4 +1,4 @@
-✨ Better-Animations ✨
+✨ Better-Animations ✨. 
 Overhaul your Minecraft player animations and bring them to life!
 
 # Installation
@@ -7,9 +7,9 @@ Place it in your resourcepacks folder.
 Activate it in the resource packs tab in-game.  
 
 # Links:
-Fabric API: https://www.curseforge.com/minecraft/mc-mods/fabric-api 
-Entity Model Features: https://modrinth.com/mod/cem 
-Entity Texture Features: https://github.com/Traben-0/Entity_Texture_Features 
+Fabric API:   https://www.curseforge.com/minecraft/mc-mods/fabric-api 
+Entity Model Features:   https://modrinth.com/mod/cem 
+Entity Texture Features:   https://github.com/Traben-0/Entity_Texture_Features 
 
 # Note: 
 Forge and Optifine support is not currently planned.
