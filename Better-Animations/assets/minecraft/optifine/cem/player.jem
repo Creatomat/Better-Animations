@@ -96,7 +96,10 @@
 					"upperbody.ty": "-sin(time*0.075)*0.3 - 11.95",
 					"right_leg2.tx": "if(limb_speed < 0.05, -2.5, -2)",
 					"left_leg2.tx": "if(limb_speed < 0.05, 2.5, 2)",
-					"right_leg2.rz": "if(limb_speed < 0.05, torad(3), 0)"
+					"right_leg2.rz": "if(limb_speed < 0.05, torad(3), 0)",
+					"upperbody.rx": "if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0)",
+					"upperbody.tz": "if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0)",
+					"lowerbody.tz": "if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0)"
 				},
 				{
 					"head2.ry": "torad(head_yaw)",
