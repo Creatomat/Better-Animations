@@ -1,18 +1,18 @@
 ✨ Better-Animations ✨ <br>
-Overhaul your Minecraft player animations and bring them to life! 
+Overhaul your Minecraft player animations and bring them to life! <br>
 
-# Installation
-Download the latest Better_Animations.zip from the releases tab.
-Place it in your resourcepacks folder.
-Activate it in the resource packs tab in-game.
+# Installation <br>
+Download the latest Better_Animations.zip from the releases tab. <br>
+Place it in your resourcepacks folder. <br>
+Activate it in the resource packs tab in-game. <br>
 
 # Links:
-Fabric API: https://www.curseforge.com/minecraft/mc-mods/fabric-ap
-Entity Model Features: https://modrinth.com/mod/cem
-Entity Texture Features: https://github.com/Traben-0/Entity_Texture_Features 
+Fabric API: https://modrinth.com/mod/fabric-api <br>
+Entity Model Features: https://modrinth.com/mod/entity-model-features <br>
+Entity Texture Features: https://modrinth.com/mod/entitytexturefeatures <br>
 
-# Note:
-Forge and Optifine support is not currently planned.
+# Note: <br>
+Forge and Optifine support is not currently planned. <br>
 
-# Compatibility:
-Should work with all Fabric mods!
+# Compatibility: <br>
+Should work with all Fabric mods! <br>
