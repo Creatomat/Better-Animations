@@ -1,4 +1,4 @@
-✨ Better-Animations ✨ <br>
+#✨ Better-Animations ✨ <br>
 Overhaul your Minecraft player animations and bring them to life! <br>
 
 # Installation <br>
