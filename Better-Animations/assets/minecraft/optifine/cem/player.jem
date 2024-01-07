@@ -76,7 +76,7 @@
 					"var.shuffle": "clamp(cos(limb_swing*-1*0.725)*limb_speed, -1, 1)",
 					"var.leg": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 0)",
 					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
-					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1.23, -5, 5)",
+					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
 					"var.random": "random(time)",
 					"var.is_crouching": "if(is_sneaking == true && is_on_ground == true, 1, 0)"
 				},
@@ -87,11 +87,11 @@
 					"right_leg2.tz": "if(limb_speed > 0.05, var.shuffle*2.25, -0.5)",
 					"right_leg2.ty": "if(limb_speed > 0.05, -var.leg*3.2 + 10.95 , 11.95)",
 					"right_leg2.rx": "if(limb_speed > 0.05,-(sin(var.swing)*limb_speed), torad(-2))",
-					"left_leg.tz": "if(limb_speed > 0.05, (-var.shuffle*2.25) + 1.77, 0.75)",
-					"left_leg.ty": "if(limb_speed > 0.05, (var.leg*3.2 + 11.95) + 1.22, (11.95) + 1.22)",
+					"left_leg.tz": "if(limb_speed > 0.05, (-var.shuffle*2.25) + 2.3, 0.75)",
+					"left_leg.ty": "if(limb_speed > 0.05, (var.leg*3.2 + 11.95) + 0, (11.95) + 0.2)",
 					"left_leg.rx": "if(limb_speed > 0.05, sin(var.fakeswing)*limb_speed, torad(3))",
-					"right_leg.tz": "if(limb_speed > 0.05, (var.shuffle*2.25) + 1.77, -0.5)",
-					"right_leg.ty": "if(limb_speed > 0.05, (-var.leg*3.2 + 10.95) + 1.22, (11.95) + 1.22)",
+					"right_leg.tz": "if(limb_speed > 0.05, (var.shuffle*2.25) + 2.3, -0.5)",
+					"right_leg.ty": "if(limb_speed > 0.05, (-var.leg*3.2 + 10.95) + 0, (11.95) + 0.2)",
 					"right_leg.rx": "if(limb_speed > 0.05,-(sin(var.fakeswing)*limb_speed), torad(-2))"
 				},
 				{
