@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - Better-Animations/tree/main/Better-Animations/**
+      - /Better-Animations/**
 
 jobs:
   create-zip:
@@ -15,11 +15,11 @@ jobs:
 
       - name: Zip Better-Animations
         run: |
-          cd Better-Animations/tree/main/Better-Animations
+          cd /Better-Animations
           zip -r Better_Animations.zip ./*
 
       - name: Upload ZIP
         uses: actions/upload-artifact@v3
         with:
           name: Better_Animations.zip
-          path: Better-Animations/tree/main/Better-Animations/Better_Animations.zip
+          path: /Better-Animations/Better_Animations.zip
