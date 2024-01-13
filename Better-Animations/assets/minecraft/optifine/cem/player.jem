@@ -35,6 +35,7 @@
 							"id": "head2",
 							"invertAxis": "xy",
 							"translate": [0, 12, 0],
+							"rotate": [0, 0, 2.5],
 							"boxes": [
 								{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [0, 0]},
 								{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [32, 0], "sizeAdd": 0.5}
@@ -123,7 +124,9 @@
 				},
 				{
 					"head2.ry": "torad(head_yaw)",
-					"head2.rx": "torad(head_pitch)"
+					"head2.rx": "torad(head_pitch)",
+					"head.rx": "if(limb_speed > 0.05, torad( (4 + (limb_speed * 10) ) + (head_pitch) ), torad(head_pitch))",
+					"head.rz": "torad(move_strafing * (-7.85))"
 				}
 			]
 		},
