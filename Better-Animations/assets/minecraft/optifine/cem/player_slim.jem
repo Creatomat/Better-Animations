@@ -113,10 +113,9 @@
 					"right_leg2.rz": "if(limb_speed < 0.05, torad(3), 0)",
 					"upperbody.rx": "if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0)",
 					"body.rx": "if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0)",
-					"upperbody.tz": "if(var.is_crouching != 1, if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0), -2.5)",
+					"upperbody.tz": "if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0)",
 					"lowerbody.tz": "if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0)",
-					"lowerbody.rx": "if(var.is_crouching == 1, torad(-27), torad(0))",
-					"lowerbody.ty": "if(var.is_crouching == 1, -24 + -4, -24)",
+					"lowerbody.ty": "-24",
 					"right_leg.tx": "if(limb_speed < 0.05, -2.5, -2)",
 					"left_leg.tx": "if(limb_speed < 0.05, 2.5, 2)",
 					"right_leg.rz": "if(limb_speed < 0.05, torad(3), 0)"
