@@ -103,17 +103,16 @@
 				{
 					"upperbody.rz": "-var.swing*0.025",
 					"upperbody.ry": "-var.shuffle*0.017",
-					"upperbody.rx": "-var.swing*0.02",
 					"head2.rz": "var.swing*0.002"
 				},
 				{
-					"upperbody.ty": "-sin(time*0.075)*0.3 - 11.95",
+					"upperbody.ty": "if(var.is_crouching, -sin(time*0.075)*0.3 - 13.5, -sin(time*0.075)*0.3 - 11.95)",
 					"right_leg2.tx": "if(limb_speed < 0.05, -2.5, -2)",
 					"left_leg2.tx": "if(limb_speed < 0.05, 2.5, 2)",
 					"right_leg2.rz": "if(limb_speed < 0.05, torad(3), 0)",
-					"upperbody.rx": "if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0)",
-					"body.rx": "if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0)",
-					"upperbody.tz": "if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0)",
+					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(-27), torad(4 + (limb_speed * 10))), 0)",
+					"body.rx": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0))",
+					"upperbody.tz": "if(var.is_crouching == 1, -5.75, if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0))",
 					"lowerbody.tz": "if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0)",
 					"lowerbody.ty": "-24",
 					"right_leg.tx": "if(limb_speed < 0.05, -2.5, -2)",
@@ -123,7 +122,7 @@
 				{
 					"head2.ry": "torad(head_yaw)",
 					"head2.rx": "torad(head_pitch)",
-					"head.rx": "if(limb_speed > 0.05, torad( (10 + (limb_speed * 12) ) + (head_pitch) ), torad(head_pitch))",
+					"head.rx": "if(limb_speed > 0.05 && var.is_crouching == 0, torad( (10 + (limb_speed * 12) ) + (head_pitch) ), torad(head_pitch))",
 					"head.rz": "torad(move_strafing * (-17.5))"
 				}
 			]
