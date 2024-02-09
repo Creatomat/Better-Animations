@@ -124,7 +124,7 @@
 				{
 					"head2.ry": "torad(head_yaw)",
 					"head2.rx": "if(hurt_time != 10, torad(head_pitch + (-6*hurt_time)),torad(head_pitch))",
-					"head.rx": "if(hurt_time == 10, if(limb_speed > 0.05 && var.is_crouching == 0, torad( (10 + (limb_speed * 12) ) + (head_pitch + (-6*hurt_time)) ), torad(head_pitch + (-6*hurt_time))), if(limb_speed > 0.05 && var.is_crouching == 0, torad( (10 + (limb_speed * 12) ) + (head_pitch) ), torad(head_pitch)))",
+					"head.rx": "if(limb_speed > 0.05 && var.is_crouching == 0 && hurt_time == 10, torad( (10 + (limb_speed * 12) ) + (head_pitch) + torad(-6*hurt_time) ), torad(head_pitch + (-6*hurt_time)))",
 					"head.rz": "if(var.is_crouching == 0, torad(move_strafing * (-17.5)), 0)"
 				}
 			]
