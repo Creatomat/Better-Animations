@@ -103,13 +103,19 @@
 				{
 					"upperbody.rz": "-var.swing*0.025",
 					"upperbody.ry": "-var.shuffle*0.017",
+					"body.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)",
+					"jacket.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)",
+					"lowerbody.ry": "if(is_on_ground == 1, 0, -(sin(time*0.75)*0.1))",
 					"head2.rz": "var.swing*0.002"
 				},
 				{
 					"upperbody.ty": "if(var.is_crouching == 1, -sin(time*0.075)*0.3 - 13.5, -sin(time*0.075)*0.3 - 11.95)",
 					"right_leg2.tx": "if(limb_speed < 0.05, -2.5, -2)",
 					"left_leg2.tx": "if(limb_speed < 0.05, 2.5, 2)",
-					"right_leg2.rz": "if(limb_speed < 0.05, torad(3), 0)",
+					"right_leg2.ry": "if(is_on_ground == 1, torad(0), torad(10))",
+					"right_leg2.rz": "if(is_on_ground == 1, if(limb_speed < 0.05, torad(3), 0), torad(10))",
+					"left_leg2.ry": "if(is_on_ground == 1, torad(0), torad(-10))",
+					"left_leg2.rz": "if(is_on_ground == 1, torad(0), torad(-10))",
 					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(-27), torad(4 + (limb_speed * 10))), 0)",
 					"body.rx": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0))",
 					"upperbody.tz": "if(var.is_crouching == 1, -5.75, if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0))",
@@ -117,7 +123,10 @@
 					"lowerbody.ty": "if(var.is_crouching == 1, -27, -24)",
 					"right_leg.tx": "if(limb_speed < 0.05, -2.5, -2)",
 					"left_leg.tx": "if(limb_speed < 0.05, 2.5, 2)",
-					"right_leg.rz": "if(limb_speed < 0.05, torad(3), 0)",
+					"right_leg.rz": "if(is_on_ground == 1, if(limb_speed < 0.05, torad(3), 0), torad(10))",
+					"right_leg.ry": "if(is_on_ground == 1, torad(0), torad(10))",
+					"left_leg.rz": "if(is_on_ground == 1, torad(0), torad(-10))",
+					"left_leg.ry": "if(is_on_ground == 1, torad(0), torad(-10))",
 					"lowerbody.rx": "if(var.is_crouching == 1, torad(-29), 0)",
 					"lowerbody.tx": "if(var.is_crouching == 1, -0.1, 0)"
 				},
