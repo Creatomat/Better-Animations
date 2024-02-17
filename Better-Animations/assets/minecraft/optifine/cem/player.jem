@@ -105,6 +105,7 @@
 					"upperbody.ry": "-var.shuffle*0.017",
 					"body.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)",
 					"jacket.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)",
+					"jacket2.tz": "0.2",
 					"lowerbody.ry": "if(is_on_ground == 1, 0, -(sin(time*0.75)*0.1))",
 					"head2.rz": "var.swing*0.002"
 				},
