@@ -102,8 +102,8 @@
 				},
 				{
 					"upperbody.rz": "-var.swing*0.025",
-					"upperbody.ry": "-var.shuffle*0.017",
-					"body.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)",
+					"upperbody.ry": "if(swing_progress == 0, -var.shuffle*0.017, torad(15)+torad(-swing_progress*30))",
+					"body.ry": "if(swing_progress == 0, if(is_on_ground == 1, 0, sin(time*0.75)*0.1), torad(15)+torad(-swing_progress*30))",
 					"jacket.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)",
 					"jacket2.tz": "0.2",
 					"lowerbody.ry": "if(is_on_ground == 1, 0, -(sin(time*0.75)*0.1))",
@@ -117,7 +117,7 @@
 					"right_leg2.rz": "if(is_on_ground == 1, if(limb_speed < 0.05, torad(3), 0), torad(10))",
 					"left_leg2.ry": "if(is_on_ground == 1, torad(0), torad(-10))",
 					"left_leg2.rz": "if(is_on_ground == 1, torad(0), torad(-10))",
-					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(-27), torad(4 + (limb_speed * 10))), 0)",
+					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(-27), torad(4 + (limb_speed * 10)) ), 0)",
 					"body.rx": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0))",
 					"upperbody.tz": "if(var.is_crouching == 1, -5.75, if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0))",
 					"lowerbody.tz": "if(var.is_crouching == 1, if(limb_speed > 0.05, 3.925 + (limb_speed * 1.25), 1.675), if(limb_speed > 0.05, 1 + (limb_speed * 1.25), 0))",
@@ -135,7 +135,8 @@
 					"head2.ry": "torad(head_yaw)",
 					"head2.rx": "if(hurt_time != 10, torad(head_pitch + (-6*hurt_time)),torad(head_pitch))",
 					"head.rx": "if(limb_speed > 0.05 && hurt_time == 0, torad( (10 + (limb_speed * 12) ) + (head_pitch) + torad(-6*hurt_time) ), torad(head_pitch + (-6*hurt_time)))",
-					"head.rz": "if(var.is_crouching == 0, torad(move_strafing * (-17.5)), 0)"
+					"head.rz": "if(var.is_crouching == 0, torad(move_strafing * (-17.5)), 0)",
+					"head.ry": "if(swing_progress == 0, torad(head_yaw), torad(head_yaw)+torad(15)+torad(-swing_progress*30))"
 				}
 			]
 		},
