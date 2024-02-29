@@ -117,12 +117,13 @@
 				{
 					"upperbody.rz": "-var.swing*0.025",
 					"upperbody.ry": "if(swing_progress == 0, -var.shuffle*0.017, torad(15)+torad(-swing_progress*30))",
-					"upperbody.ty": "if(var.is_crouching == 1, -sin(time*0.075)*0.3 - 13.5, -sin(time*0.075)*0.3 - 11.95)",
+					"upperbody.ty": "if(var.is_crouching == 1, -sin(time*0.075)*0.3 - 13.5, if(limb_speed > 0.05, -12.25+sin(limb_swing*1)*limb_speed*0.6, -sin(time*0.075)*0.3 - 11.95))",
 					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(-27), torad(4 + (limb_speed * 10)) ), 0)",
 					"upperbody.tz": "if(var.is_crouching == 1, -5.75, if(limb_speed > 0.05, 1 + (limb_speed * 1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"body.ry": "if(swing_progress == 0, if(is_on_ground == 1, 0, sin(time*0.75)*0.1), torad(15)+torad(-swing_progress*30))",
 					"body.rx": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0))",
 					"body.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
+					"body.ty": "if(limb_speed > 0.05 && var.is_croucing == 0,sin(limb_swing*1)*limb_speed*0.6,body.ty)",
 					"jacket2.tz": "0.2",
 					"jacket.ry": "if(is_on_ground == 1, 0, sin(time*0.75)*0.1)"
 				},
@@ -154,12 +155,12 @@
 			]
 		},
 		{
-			"part": "left_sleve",
-			"id": "left_sleve",
+			"part": "left_sleeve",
+			"id": "left_sleeve",
 			"invertAxis": "xy",
 			"translate": [-5, -22, 0],
 			"boxes": [
-				{"coordinates": [-8, 12, -2, 4, 12, 4], "textureOffset": [48, 48], "sizeAdd": 0.25}
+				{"coordinates": [2, 12, -2, 4, 12, 4], "textureOffset": [48, 48], "sizeAdd": 0.25}
 			]
 		},
 		{
@@ -172,12 +173,12 @@
 			]
 		},
 		{
-			"part": "right_sleve",
-			"id": "right_sleve",
+			"part": "right_sleeve",
+			"id": "right_sleeve",
 			"invertAxis": "xy",
 			"translate": [5, -22, 0],
 			"boxes": [
-				{"coordinates": [5, 12, -2, 4, 12, 4], "textureOffset": [40, 32], "sizeAdd": 0.25}
+				{"coordinates": [-6, 12, -2, 4, 12, 4], "textureOffset": [40, 32], "sizeAdd": 0.25}
 			]
 		},
 		{
