@@ -141,7 +141,8 @@
 					"head.rx": "if(limb_speed > 0.05 && hurt_time == 0, torad( (10 + (limb_speed * 12) ) + (head_pitch) + torad(-6*hurt_time) ), torad(head_pitch + (-6*hurt_time)))",
 					"head.rz": "if(var.is_crouching == 0 && hurt_time == 10, torad(move_strafing * (-17.5)), 0)",
 					"head.ry": "if(swing_progress == 0, torad(head_yaw), torad(head_yaw)+torad(15)+torad(-swing_progress*30))",
-					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))"
+					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
+					"head.ty": "if(limb_speed > 0.05 && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.6, head.ty)"
 				}
 			]
 		},
