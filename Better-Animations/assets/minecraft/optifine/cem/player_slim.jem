@@ -115,6 +115,10 @@
 					"right_leg.rx": "if(is_on_ground == 1 || is_riding == true, if(limb_speed > 0.05,-(sin(var.fakeswing)*limb_speed), if(is_riding == false, torad(-2), right_leg.rx)), -(sin(time*0.7)*0.55))"
 				},
 				{
+					"right_arm.rx": "if(swing_progress == 0, right_arm.rx, torad(-100+(swing_progress*80)))",
+					"right_sleeve.rx": "if(swing_progress == 0, right_sleeve.rx, torad(-100+(swing_progress*80)))"
+				},
+				{
 					"upperbody.rz": "-var.swing*0.025",
 					"upperbody.ry": "if(swing_progress == 0, -var.shuffle*0.017, torad(15)+torad(-swing_progress*30))",
 					"upperbody.ty": "if(var.is_crouching == 1, -sin(time*0.075)*0.3 - 13.5, if(limb_speed > 0.05, -12.25+sin(limb_swing*1)*limb_speed*0.6, -sin(time*0.075)*0.3 - 11.95))",
