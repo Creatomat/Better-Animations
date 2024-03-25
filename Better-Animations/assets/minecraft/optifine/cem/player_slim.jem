@@ -117,8 +117,16 @@
 					"right_leg.rx": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(limb_speed > 0.05,-(sin(var.fakeswing)*limb_speed), if(is_riding == false, torad(-2), right_leg.rx)), -(sin(time*0.7)*0.55))"
 				},
 				{
-					"right_arm.rx": "if(swing_progress == 0, right_arm.rx, torad(-100+(swing_progress*80)))",
-					"right_sleeve.rx": "if(swing_progress == 0, right_sleeve.rx, torad(-100+(swing_progress*80)))"
+					"right_arm.rx": "if(var.is_falling == 1, torad(180) + sin(time*0.6)*0.8, right_arm.rx + if(swing_progress == 0, right_arm.rx, torad(-100+(swing_progress*80))))",
+					"right_sleeve.rx": "if(var.is_falling == 1, torad(180) + sin(time*0.6)*0.8, right_arm.rx + if(swing_progress == 0, right_sleeve.rx, torad(-100+(swing_progress*80))))",
+					"right_arm.rz": "if(var.is_falling == 1, torad(30), right_arm.rz)",
+					"right_sleeve.rz": "if(var.is_falling == 1, torad(30), right_sleeve.rz)"
+				},
+				{
+					"left_arm.rx": "if(var.is_falling == 1, torad(180) + sin(-time*0.6)*0.8, right_arm.rx + if(swing_progress == 0, left_arm.rx, torad(-100+(swing_progress*80))))",
+					"left_sleeve.rx": "if(var.is_falling == 1, torad(180) + sin(-time*0.6)*0.8, right_arm.rx + if(swing_progress == 0, left_sleeve.rx, torad(-100+(swing_progress*80))))",
+					"left_arm.rz": "if(var.is_falling == 1, torad(-30), left_arm.rz)",
+					"left_sleeve.rz": "if(var.is_falling == 1, torad(-30), left_sleeve.rz)"
 				},
 				{
 					"upperbody.rz": "-var.swing*0.025",
