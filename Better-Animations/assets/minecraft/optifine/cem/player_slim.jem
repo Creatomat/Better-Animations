@@ -61,7 +61,7 @@
 					"var.random": "random(time)",
 					"var.is_crouching": "if(is_sneaking == true && is_on_ground == true, 1, 0)",
 					"var.timer": "if(is_on_ground == 1, 0, var.timer + 1)",
-					"var.is_falling": "if(var.timer > 15, 1, 0)"
+					"var.is_falling": "if(var.timer > 20, 1, 0)"
 				},
 				{
 					"left_leg.tz": "if(limb_speed > 0.05, (-var.shuffle*2.25) + 2.2, 0.75)",
@@ -109,12 +109,12 @@
 					"upperbody.ty": "if(var.is_crouching == 1, -sin(time*0.075)*0.3 - 13.5, if(limb_speed > 0.05, -12.25+sin(limb_swing*1)*limb_speed*0.6, -sin(time*0.075)*0.3 - 11.95))",
 					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(0), torad(4 + (limb_speed * 10)) ), 0)",
 					"upperbody.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 1 + (limb_speed * 1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
-					"body.ry": "if(swing_progress == 0, if(is_on_ground == 1 || is_riding == true, 0, sin(time*0.75)*0.1), torad(15)+torad(-swing_progress*30))",
+					"body.ry": "if(swing_progress == 0, if((is_on_ground == 1 || is_riding == true) || var.is_falling == 0, 0, sin(time*0.75)*0.1), torad(15)+torad(-swing_progress*30))",
 					"body.rx": "if(var.is_crouching == 1, body.rx, if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0))",
 					"body.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"body.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.6,body.ty)",
 					"jacket2.tz": "0.2",
-					"jacket.ry": "if(is_on_ground == 1 || is_riding == true, 0, sin(time*0.75)*0.1)"
+					"jacket.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_falling == 0, 0, sin(time*0.75)*0.1)"
 				},
 				{
 					"head2.ry": "torad(head_yaw)",
