@@ -6,13 +6,19 @@
 			"part": "head",
 			"id": "head",
 			"invertAxis": "xy",
-			"translate": [0, -24, 0]
+			"translate": [0, -24, 0],
+			"boxes": [
+				{"coordinates": [-4, 24, -4, 8, 8, 8], "textureOffset": [0, 0]}
+			]
 		},
 		{
 			"part": "headwear",
 			"id": "headwear",
 			"invertAxis": "xy",
-			"translate": [0, -24, 0]
+			"translate": [0, -24, 0],
+			"boxes": [
+				{"coordinates": [-4, 24, -4, 8, 8, 8], "textureOffset": [32, 0], "sizeAdd": 0.5}
+			]
 		},
 		{
 			"part": "body",
@@ -34,11 +40,7 @@
 						{
 							"id": "head2",
 							"invertAxis": "xy",
-							"translate": [0, 12, 0],
-							"boxes": [
-								{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [0, 0]},
-								{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [32, 0], "sizeAdd": 0.5}
-							]
+							"translate": [0, 12, 0]
 						},
 						{
 							"id": "jacket2",
