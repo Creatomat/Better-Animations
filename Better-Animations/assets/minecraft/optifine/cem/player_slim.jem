@@ -89,16 +89,16 @@
 					"right_pants.rx": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(limb_speed > 0.05,-(sin(var.fakeswing)*limb_speed), if(is_riding == false, torad(-2) + right_pants.rx, right_leg.rx)), -(sin(time*0.7)*0.55))"
 				},
 				{
-					"right_arm.rx": "if(var.is_falling == 1, torad(180) + sin(time*0.6)*0.8, right_arm.rx + if(swing_progress == 0, 0, torad(-100+(swing_progress*80))))",
-					"right_sleeve.rx": "if(var.is_falling == 1, torad(180) + sin(time*0.6)*0.8, right_sleeve.rx + if(swing_progress == 0, 0, torad(-100+(swing_progress*80))))",
+					"right_arm.rx": "if(var.is_falling == 1, torad(180) + sin(time*0.6)*0.8, right_arm.rx)",
+					"right_sleeve.rx": "if(var.is_falling == 1, torad(180) + sin(time*0.6)*0.8, right_sleeve.rx)",
 					"right_arm.rz": "if(var.is_falling == 1, torad(-30), right_arm.rz)",
 					"right_sleeve.rz": "if(var.is_falling == 1, torad(-30), right_sleeve.rz)",
 					"right_arm.ty": "right_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
 					"right_sleeve.ty": "right_sleeve.ty + sin(limb_swing*1)*limb_speed*0.9"
 				},
 				{
-					"left_arm.rx": "if(var.is_falling == 1, torad(180) + sin(-time*0.6)*0.8, left_arm.rx + if(swing_progress == 0, 0, torad(-100+(swing_progress*80))))",
-					"left_sleeve.rx": "if(var.is_falling == 1, torad(180) + sin(-time*0.6)*0.8, left_sleeve.rx + if(swing_progress == 0, 0, torad(-100+(swing_progress*80))))",
+					"left_arm.rx": "if(var.is_falling == 1, torad(180) + sin(-time*0.6)*0.8, left_arm.rx)",
+					"left_sleeve.rx": "if(var.is_falling == 1, torad(180) + sin(-time*0.6)*0.8, left_sleeve.rx)",
 					"left_arm.rz": "if(var.is_falling == 1, torad(30), left_arm.rz)",
 					"left_sleeve.rz": "if(var.is_falling == 1, torad(30), left_sleeve.rz)",
 					"left_arm.ty": "left_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
@@ -106,11 +106,11 @@
 				},
 				{
 					"upperbody.rz": "-var.swing*0.025",
-					"upperbody.ry": "if(swing_progress == 0, -var.shuffle*0.017, torad(15)+torad(-swing_progress*30))",
+					"upperbody.ry": "-var.shuffle*0.017",
 					"upperbody.ty": "if(var.is_crouching == 1, -sin(time*0.075)*0.3 - 13.5, if(limb_speed > 0.05, -12.25+sin(limb_swing*1)*limb_speed*0.9, -sin(time*0.075)*0.3 - 11.95))",
 					"upperbody.rx": "if(limb_speed > 0.05 || var.is_crouching == 1, if(var.is_crouching == 1, torad(0), torad(4 + (limb_speed * 10)) ), 0)",
 					"upperbody.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 1 + (limb_speed * 1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
-					"body.ry": "if(swing_progress == 0, if((is_on_ground == 1 || is_riding == true) || var.is_falling == 0, 0, sin(time*0.75)*0.1), torad(15)+torad(-swing_progress*30))",
+					"body.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_falling == 0, 0, sin(time*0.75)*0.1)",
 					"body.rx": "if(var.is_crouching == 1, body.rx, if(limb_speed > 0.05, torad(4 + (limb_speed * 10)), 0))",
 					"body.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"body.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,body.ty)",
@@ -120,12 +120,12 @@
 				{
 					"head.rx": "if(is_in_water == true && limb_speed > 0.5, torad(-90), if(limb_speed > 0.05 && hurt_time == 0, torad(-(3 + (limb_speed * 2) ) + (head_pitch)) + torad(-6*hurt_time) + (sin(limb_swing*1)*limb_speed*0.075), torad(head_pitch + (-6*hurt_time))))",
 					"head.rz": "if(var.is_crouching == 0 && hurt_time == 10, torad(move_strafing * (-17.5)), 0)",
-					"head.ry": "if(swing_progress == 0, torad(head_yaw), torad(head_yaw)+torad(15)+torad(-swing_progress*30))",
+					"head.ry": "torad(head_yaw)",
 					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"head.ty": "if(limb_speed > 0.05 && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9, head.ty)",
 					"headwear.rx": "if(is_in_water == true && limb_speed > 0.5, torad(-90), if(limb_speed > 0.05 && hurt_time == 0, torad(-(3 + (limb_speed * 2) ) + (head_pitch)) + torad(-6*hurt_time) + (sin(limb_swing*1)*limb_speed*0.075), torad(head_pitch + (-6*hurt_time))))",
 					"headwear.rz": "if(var.is_crouching == 0 && hurt_time == 10, torad(move_strafing * (-17.5)), 0)",
-					"headwear.ry": "if(swing_progress == 0, torad(head_yaw), torad(head_yaw)+torad(15)+torad(-swing_progress*30))",
+					"headwear.ry": "torad(head_yaw)",
 					"headwear.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, 0 + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"headwear.ty": "if(limb_speed > 0.05 && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9, head.ty)"
 				}
