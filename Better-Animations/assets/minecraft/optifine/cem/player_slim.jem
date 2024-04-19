@@ -57,8 +57,7 @@
 					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
 					"var.random": "random(time)",
 					"var.is_crouching": "if(is_sneaking == true && is_on_ground == true, 1, 0)",
-					"var.timer": "if((is_on_ground == 1 || is_riding == true || is_in_water == true), 0, var.timer + 1)",
-					"var.is_falling": "if(var.timer > 30, 1, 0)"
+					"var.is_falling": "if(true, 0, 0)"
 				},
 				{
 					"left_leg.tz": "if(limb_speed > 0.05, if(var.is_crouching != 1, (-var.shuffle*2.25) + 2.2, (-var.shuffle*2.25) + 4.5), if(var.is_crouching != 1, 0.75, 4.5))",
