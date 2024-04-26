@@ -25,6 +25,16 @@
 			"id": "body",
 			"invertAxis": "xy",
 			"translate": [0, -24, 0],
+			"submodels": [
+				{
+					"id": "jacket2",
+							"invertAxis": "xy",
+							"translate": [0, 0, 0],
+							"boxes": [
+								{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
+							]
+				}
+			],
 			"boxes": [
 				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 16]}
 			]
@@ -44,14 +54,6 @@
 							"id": "head2",
 							"invertAxis": "xy",
 							"translate": [0, 12, 0]
-						},
-						{
-							"id": "jacket2",
-							"invertAxis": "xy",
-							"translate": [0, 0, 0],
-							"boxes": [
-								{"coordinates": [-4, 0, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
-							]
 						}
 					]
 				}
@@ -63,8 +65,8 @@
 					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
 					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
 					"var.random": "random(time)",
-					"var.is_crouching": "if(is_sneaking == true && is_on_ground == true, 1, 0)",
-					"var.is_falling": "if((height_above_ground > 6 && is_on_ground == false) && (is_riding == false), 1, 0)"
+					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
+					"var.is_falling": "if((height_above_ground > 6 && is_on_ground == false) && (is_riding == false && is_in_water == false), 1, 0)"
 				},
 				{
 					"left_leg.tz": "if(limb_speed > 0.05, if(var.is_crouching != 1, (-var.shuffle*2.25) + 2.2, (-var.shuffle*2.25) + 4.5), if(var.is_crouching != 1, 0.75, 4.5))",
