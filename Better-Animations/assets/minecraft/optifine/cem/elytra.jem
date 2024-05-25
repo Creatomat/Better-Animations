@@ -1,0 +1,46 @@
+{
+	"credit": "Made with Blockbench",
+	"texture": "",
+	"textureSize": [64, 32],
+	"models": [
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"mirrorTexture": "u",
+			"translate": [-5, -24, 0],
+			"textureSize": [64, 32],
+			"boxes": [
+				{"coordinates": [-5, 4, 0, 10, 20, 2], "textureOffset": [22, 0], "sizeAdd": 1}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [5, -24, 0],
+			"textureSize": [64, 32],
+			"boxes": [
+				{"coordinates": [-5, 4, 0, 10, 20, 2], "textureOffset": [22, 0], "sizeAdd": 1}
+			],
+			"animations": [
+				{
+					"var.shuffle": "clamp(cos(limb_swing*-1*0.725)*limb_speed, -1, 1)",
+					"var.leg": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 0)",
+					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
+					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
+					"var.random": "random(time)",
+					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
+					"var.is_on_fire": "if((((height_above_ground > 6 && is_on_ground == false && is_gliding == false) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true, 1, 0)",
+					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
+					"var.idle_rate": "-sin(time*0.075)*0.3",
+					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)"
+				},
+				{
+					"left_wing.ty": "if(limb_speed > 0.05 || true == true && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + left_wing.ty)",
+					"right_wing.ty": "if(limb_speed > 0.05 || true == true && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + right_wing.ty)"
+				}
+			]
+		}
+	]
+}

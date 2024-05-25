@@ -25,18 +25,18 @@
 			"id": "body",
 			"invertAxis": "xy",
 			"translate": [0, -24, 0],
-			"boxes": [
-				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 16]}
-			],
 			"submodels": [
 				{
 					"id": "jacket2",
-					"invertAxis": "xy",
-					"translate": [0, 0, 0],
-					"boxes": [
-						{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
-					]
+							"invertAxis": "xy",
+							"translate": [0, 0, 0],
+							"boxes": [
+								{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
+							]
 				}
+			],
+			"boxes": [
+				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 16]}
 			]
 		},
 		{
@@ -129,14 +129,18 @@
 			"translate": [2, -12, 0],
 			"boxes": [
 				{"coordinates": [-4, 0, -2, 4, 12, 4], "textureOffset": [0, 32], "sizeAdd": 0.25}
-			],
-			"animations": [
-				{
-					"left_leg.tz": "sin(limb_swing)*limb_speed*2",
-					"left_leg.rx": "sin(limb_swing)*limb_speed*0.6",
-					"left_leg.ty": "clamp(sin(-limb_swing)*limb_speed*1.6, -1, 0) + 12"
-				}
+			]
+		},
+		{
+			"part": "cloak",
+			"id": "cloak",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"textureSize": [64, 32],
+			"boxes": [
+				{"coordinates": [-5, 8, -1, 10, 16, 1], "textureOffset": [0, 0]}
 			]
 		}
+
 	]
 }
