@@ -1,3 +1,0 @@
-remove redundant true == true
-make body lean more
-fix leg

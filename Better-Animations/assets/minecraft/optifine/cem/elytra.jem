@@ -38,7 +38,9 @@
 				},
 				{
 					"left_wing.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + left_wing.ty)",
-					"right_wing.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + right_wing.ty)"
+					"right_wing.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + right_wing.ty)",
+					"left_wing.tz": "if(limb_speed > 0.05, (limb_speed * -1.25), 0)",
+					"right_wing.tz": "if(limb_speed > 0.05, (limb_speed * -1.25), 0)"
 				}
 			]
 		}
