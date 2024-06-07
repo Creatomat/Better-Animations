@@ -1,0 +1,2 @@
+disable bob while swimming
+fix arm distancing on slim model

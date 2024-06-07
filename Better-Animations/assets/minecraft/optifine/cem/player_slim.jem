@@ -130,7 +130,7 @@
 					"body.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"body.ty": "if(limb_speed > 0.05 && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + body.ty)",
 					"cloak.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + cloak.ty)",
-					"cloak.tz": "if(limb_speed > 0.05, (limb_speed * 1.25), 0)",
+					"cloak.tz": "if(var.is_crouching == 1, 1, if(limb_speed > 0.05, (limb_speed * 1.25), 0))",
 					"jacket2.tz": "0.2",
 					"jacket.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_on_fire == 0, 0, sin(time*0.75)*0.1)"
 				},
