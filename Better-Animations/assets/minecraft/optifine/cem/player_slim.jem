@@ -66,7 +66,7 @@
 					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
 					"var.random": "random(time)",
 					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
-					"var.is_on_fire": "if((((height_above_ground > 6 && is_on_ground == false && is_gliding == false) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true, 1, 0)",
+					"var.is_on_fire": "if(((((height_above_ground > 6 && is_on_ground == false && is_gliding == false) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true) && is_blocking == false, 1, 0)",
 					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
 					"var.idle_rate": "-sin(time*0.075)*0.3",
 					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)"
