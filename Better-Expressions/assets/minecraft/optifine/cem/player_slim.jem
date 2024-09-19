@@ -5425,28 +5425,28 @@
 					"right_pants.rz": "var.rl_rz"
 				},
 				{
-					"right_arm.rx": "if(var.is_on_fire == 1, torad(180) + (sin(time*0.6)*0.8)*var.fall_rate, right_arm.rx)",
-					"right_sleeve.rx": "if(var.is_on_fire == 1, torad(180) + (sin(time*0.6)*0.8)*var.fall_rate, right_sleeve.rx)",
-					"right_arm.rz": "if(var.is_on_fire == 1, torad(-30) + right_arm.rz, if(is_gliding == true, torad(23), if(fluid_depth_up > 2, torad(20) + right_arm.rz, right_arm.rz)))",
-					"right_sleeve.rz": "if(var.is_on_fire == 1, torad(-30) + right_sleeve.rz, if(is_gliding == true, torad(23), if(fluid_depth_up > 2, torad(20) + right_sleeve.rz, right_sleeve.rz)))",
-					"right_arm.ry": "if(fluid_depth_up > 2, torad(15) + right_arm.ry, right_arm.ry)",
-					"right_sleeve.ry": "if(fluid_depth_up > 2, torad(15) + right_sleeve.ry, right_sleeve.ry)",
-					"right_arm.ty": "(var.idle_rate) + right_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
-					"right_sleeve.ty": "(var.idle_rate) + right_sleeve.ty + sin(limb_swing*1)*limb_speed*0.9",
-					"right_arm.tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)",
-					"right_sleeve.tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)"
+					"right_arm.rx": "var.rh_rx",
+					"right_sleeve.rx": "var.rh_rx",
+					"right_arm.rz": "var.rh_rz",
+					"right_sleeve.rz": "var.rh_rz",
+					"right_arm.ry": "var.rh_ry",
+					"right_sleeve.ry": "var.rh_ry",
+					"right_arm.ty": "var.rh_ty",
+					"right_sleeve.ty": "var.rh_ty",
+					"right_arm.tz": "var.rh_tz",
+					"right_sleeve.tz": "var.rh_tz"
 				},
 				{
-					"left_arm.rx": "if(var.is_on_fire == 1, torad(180) + sin(-time*0.6)*0.8*var.fall_rate, left_arm.rx)",
-					"left_sleeve.rx": "if(var.is_on_fire == 1, torad(180) + sin(-time*0.6)*0.8*var.fall_rate, left_sleeve.rx)",
-					"left_arm.rz": "if(var.is_on_fire == 1, torad(30) + left_arm.rz, if(is_gliding == true, torad(-23), if(fluid_depth_up > 2, torad(-20) + left_arm.rz, left_arm.rz)))",
-					"left_sleeve.rz": "if(var.is_on_fire == 1, torad(30) + left_sleeve.rz, if(is_gliding == true, torad(-23), if(fluid_depth_up > 2, torad(-20) + left_sleeve.rz, left_sleeve.rz)))",
-					"left_arm.ry": "if(fluid_depth_up > 2, torad(-15) + left_arm.ry, left_arm.ry)",
-					"left_sleeve.ry": "if(fluid_depth_up > 2, torad(-15) + left_sleeve.ry, left_sleeve.ry)",
-					"left_arm.ty": "(var.idle_rate) + left_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
-					"left_sleeve.ty": "(var.idle_rate) + left_sleeve.ty + sin(limb_swing*1)*limb_speed*0.9",
-					"left_arm.tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)",
-					"left_sleeve.tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)"
+					"left_arm.rx": "var.lh_rx",
+					"left_sleeve.rx": "var.lh_rx",
+					"left_arm.rz": "var.lh_rz",
+					"left_sleeve.rz": "var.lh_rz",
+					"left_arm.ry": "var.lh_ry",
+					"left_sleeve.ry": "var.lh_ry",
+					"left_arm.ty": "var.lh_ty",
+					"left_sleeve.ty": "var.lh_ty",
+					"left_arm.tz": "var.lh_tz",
+					"left_sleeve.tz": "var.lh_rz"
 				},
 				{
 					"upperbody.rz": "-var.swing*0.025",
