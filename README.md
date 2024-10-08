@@ -1,6 +1,5 @@
 # Better Animations
 *Buttery Smooth!*  
-**Better Expressions** has moved! Get it [here](https://www.curseforge.com/minecraft/texture-packs/better-expressions)  
   
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UC0c_GJTYB5CW-WE_LSsKFYg?style=for-the-badge&logo=youtube&label=Creatomat%20Gaming)
 ](https://www.youtube.com/channel/UC0c_GJTYB5CW-WE_LSsKFYg)  
