@@ -151,7 +151,7 @@
 					"left_arm.ty": "var.lh_ty",
 					"left_sleeve.ty": "var.lh_ty",
 					"left_arm.tz": "var.lh_tz",
-					"left_sleeve.tz": "var.lh_rz"
+					"left_sleeve.tz": "var.lh_tz"
 				},
 				{
 					"upperbody.rz": "-var.swing*0.025",
