@@ -33,7 +33,7 @@
 			"translate": [0, -24, 0],
 			"submodels": [
 				{
-					"id": "upperbodies",
+					"id": "upperbody",
 					"invertAxis": "xy",
 					"translate": [0, 12, 0],
 					"submodels": [
