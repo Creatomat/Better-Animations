@@ -1,7 +1,7 @@
 {
 	"pack": {
-		"pack_format": 34,
-		"supported_formats":[8,34],
+		"pack_format": 42,
+		"supported_formats":[8,42],
 		"description": "\u00A7b Buttery\u00A7a Smooth!"
 	}
 }
