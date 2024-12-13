@@ -62,7 +62,11 @@
 					"var.idle_rate": "-sin(time*0.075)*0.3",
 					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)",
 					"var.LastYPosition": "pos_y",
-					"var.ActivelyClimbing": "if(is_climbing && abs(var.LastYPosition - pos_y) > 0, 1, 0)"
+					"var.ActivelyClimbing": "if(is_climbing && abs(var.LastYPosition - pos_y) > 0, 1, 0)",
+					"var.a": "if(is_climbing == true, keyframeloop(time/10, torad(-30), torad(25)), 0)",
+					"var.b": "if(is_climbing == true, keyframeloop(time/10, torad(25), torad(-30)), 0)",
+					"var.c": "if(is_climbing == true, keyframeloop(time/10, torad(-20), torad(15)), 0)",
+					"var.d": "if(is_climbing == true, keyframeloop(time/10, torad(15), torad(-20)), 0)"
 				},
 				{
 					"var.ll_tx": "2.1",
@@ -79,16 +83,16 @@
 					"var.rh_tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)"
 				},
 				{
-					"var.ll_rx": "if(is_climbing == true, torad(-60), if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_riding == false, if(is_swimming == true, 0, if(is_gliding == false, if(fluid_depth_up > 2, sin(var.fakeswing)*limb_speed + sin(time*0.1)*0.2, sin(var.fakeswing)*limb_speed), sin(var.fakeswing)*limb_speed*0.175) + if(limb_speed < 0.05, left_leg.rx, 0)), torad(-90)), sin(time*0.7)*0.5))",
+					"var.ll_rx": "if(is_climbing == true, torad(-60), if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_riding == false, if(is_swimming == true, 0, if(is_gliding == false, if(fluid_depth_up > 2, sin(var.fakeswing)*limb_speed + sin(time*0.1)*0.2, sin(var.fakeswing)*limb_speed), sin(var.fakeswing)*limb_speed*0.175) + if(limb_speed < 0.05, left_leg.rx, 0)), torad(-90)), sin(time*0.7)*0.5)) + var.d",
 					"var.ll_ry": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, torad(0) + left_leg.ry, torad(-10) + left_leg.ry)",
 					"var.ll_rz": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_swimming == true, sin(limb_swing*0.24)*0.4 + torad(-30), if(fluid_depth_up > 2, torad(-7) + left_leg.rz, left_leg.rz)), torad(-10) + left_leg.rz)",
-					"var.rl_rx": "if(is_climbing == true, torad(-47), if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_riding == false, if(is_swimming == true, 0, if(is_gliding == false, if(fluid_depth_up > 2, -(sin(var.fakeswing)*limb_speed + sin(time*0.1)*0.2), -(sin(var.fakeswing)*limb_speed)), -(sin(var.fakeswing)*limb_speed*0.175)) + if(limb_speed < 0.05, right_leg.rx, 0)), torad(-90)), -(sin(time*0.7)*0.55)))",
+					"var.rl_rx": "if(is_climbing == true, torad(-47), if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_riding == false, if(is_swimming == true, 0, if(is_gliding == false, if(fluid_depth_up > 2, -(sin(var.fakeswing)*limb_speed + sin(time*0.1)*0.2), -(sin(var.fakeswing)*limb_speed)), -(sin(var.fakeswing)*limb_speed*0.175)) + if(limb_speed < 0.05, right_leg.rx, 0)), torad(-90)), -(sin(time*0.7)*0.55))) + var.c",
 					"var.rl_ry": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, torad(0) + right_leg.ry, torad(10) + right_leg.ry)",
 					"var.rl_rz": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_swimming == true, sin(limb_swing*0.24)*-0.4 + torad(30), if(fluid_depth_up > 2, torad(7) + right_leg.rz, right_leg.rz)), torad(10) + right_leg.rz)",
-					"var.lh_rx": "if(is_climbing == true, torad(-105), if(var.is_on_fire == 1, torad(180) + sin(-time*0.6)*0.8*var.fall_rate, left_arm.rx))",
+					"var.lh_rx": "if(is_climbing == true, torad(-105), if(var.is_on_fire == 1, torad(180) + sin(-time*0.6)*0.8*var.fall_rate, left_arm.rx)) + var.b",
 					"var.lh_ry": "if(fluid_depth_up > 2, torad(-15) + left_arm.ry, left_arm.ry)",
 					"var.lh_rz": "if(var.is_on_fire == 1, torad(30) + left_arm.rz, if(is_gliding == true, torad(-23), if(fluid_depth_up > 2, torad(-20) + left_arm.rz, left_arm.rz)))",
-					"var.rh_rx": "if(is_climbing == true, torad(-80), if(var.is_on_fire == 1, torad(180) + (sin(time*0.6)*0.8)*var.fall_rate, right_arm.rx))",
+					"var.rh_rx": "if(is_climbing == true, torad(-80), if(var.is_on_fire == 1, torad(180) + (sin(time*0.6)*0.8)*var.fall_rate, right_arm.rx)) + var.a",
 					"var.rh_ry": "if(fluid_depth_up > 2, torad(15) + right_arm.ry, right_arm.ry)",
 					"var.rh_rz": "if(var.is_on_fire == 1, torad(-30) + right_arm.rz, if(is_gliding == true, torad(23), if(fluid_depth_up > 2, torad(20) + right_arm.rz, right_arm.rz)))"
 				},
@@ -141,11 +145,6 @@
 					"head.ry": "if(is_swimming == true, -torad(head_yaw), torad(head_yaw))",
 					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"head.ty": "if((limb_speed > 0.05  && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9, (var.idle_rate) + head.ty)"
-				},
-				{
-					"cloak.ty": "if((limb_speed > 0.05 && is_swimming == false) && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + cloak.ty)",
-					"cloak.tz": "if(var.is_crouching == 1, 1, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * 1.25), 0))",
-					"cloak.rx": "if(is_swimming == true, torad(limb_speed*40), 0)"
 				}
 			]
 		},
