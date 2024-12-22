@@ -1,0 +1,116 @@
+{
+  "texture": "",
+  "textureSize": [
+    64,
+    64
+  ],
+  "shadow_size": 1.0,
+  "models": [
+    {
+      "texture": "",
+      "textureSize": [
+        64,
+        32
+      ],
+      "invertAxis": "xy",
+      "translate": [
+        0.0,
+        -24.0,
+        -2.0
+      ],
+      "rotate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mirrorTexture": "",
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "uvDown": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvUp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvFront": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvBack": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvLeft": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvRight": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "coordinates": [
+            -5.0,
+            8.0,
+            1.0,
+            10.0,
+            16.0,
+            1.0
+          ],
+          "sizeAdd": 0.0,
+          "sizeAddX": 0.0,
+          "sizeAddY": 0.0,
+          "sizeAddZ": 0.0
+        }
+      ],
+      "submodels": [],
+      "baseId": "",
+      "model": "",
+      "id": "cape",
+      "part": "cape",
+      "attach": false,
+      "scale": 1.0,
+      "animations": [
+        {
+          "var.shuffle": "clamp(cos(limb_swing*-1*0.725)*limb_speed, -1, 1)",
+					"var.leg": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 0)",
+					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
+					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
+					"var.random": "random(time)",
+					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
+					"var.is_on_fire": "if(((((height_above_ground > 6 && is_on_ground == false && is_gliding == false) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true) && is_blocking == false, 1, 0)",
+					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
+					"var.idle_rate": "-sin(time*0.075)*0.3",
+					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)",
+					"var.moving_up": "if(var.pos_y != player_pos_y, 1, 0)",
+					"var.a": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-30), torad(25)), 0)",
+					"var.b": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(25), torad(-30)), 0)",
+					"var.c": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
+					"var.d": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
+					"var.pos_y": "player_pos_y"
+        },
+        {
+					"cape.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05))) + 2",
+					"cape.ty": "if((limb_speed > 0.05 && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + body.ty)"
+        }
+      ]
+    }
+  ]
+}

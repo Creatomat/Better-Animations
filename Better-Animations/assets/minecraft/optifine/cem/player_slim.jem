@@ -61,12 +61,12 @@
 					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
 					"var.idle_rate": "-sin(time*0.075)*0.3",
 					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)",
-					"var.LastYPosition": "pos_y",
-					"var.ActivelyClimbing": "if(is_climbing && abs(var.LastYPosition - pos_y) > 0, 1, 0)",
-					"var.a": "if(is_climbing == true, keyframeloop(time/10, torad(-30), torad(25)), 0)",
-					"var.b": "if(is_climbing == true, keyframeloop(time/10, torad(25), torad(-30)), 0)",
-					"var.c": "if(is_climbing == true, keyframeloop(time/10, torad(-20), torad(15)), 0)",
-					"var.d": "if(is_climbing == true, keyframeloop(time/10, torad(15), torad(-20)), 0)"
+					"var.moving_up": "if(var.pos_y != player_pos_y, 1, 0)",
+					"var.a": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-30), torad(25)), 0)",
+					"var.b": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(25), torad(-30)), 0)",
+					"var.c": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
+					"var.d": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
+					"var.pos_y": "player_pos_y"
 				},
 				{
 					"var.ll_tx": "2.1",
