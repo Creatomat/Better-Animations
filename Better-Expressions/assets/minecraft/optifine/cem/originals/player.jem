@@ -22,7 +22,7 @@
 				{
 					"id": "Created_by_FreshLX_for_Fresh_Animations",
 					"invertAxis": "xy",
-					"translate": [0, 0, 0],
+					"translate": [0, 0, 1],
 					"submodels": [
 						{
 							"id": "Adapted_for_player_by_Traben",
@@ -30,7 +30,7 @@
 							"translate": [0, 0, 0],
 							"submodels": [
 								{
-									"id": "Base_pack_by_BoZo_Xo2_n_CoolRanchChris",
+									"id": "Base_pack_by_BoZo_Xo2",
 									"invertAxis": "xy",
 									"translate": [0, 0, 0],
 									"submodels": [
@@ -5309,22 +5309,37 @@
 			]
 		},
 		{
+			"part": "headwear",
+			"id": "headwear",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"boxes": [
+				{
+					"coordinates": [-4.5, 23.5, -4.5, 9, 9, 9],
+					"uvNorth": [40, 8, 48, 16],
+					"uvEast": [32, 8, 40, 16],
+					"uvSouth": [56, 8, 64, 16],
+					"uvWest": [48, 8, 56, 16],
+					"uvUp": [48, 8, 40, 0],
+					"uvDown": [56, 0, 48, 8]
+				}
+			]
+		},
+		{
 			"part": "body",
 			"id": "body",
 			"invertAxis": "xy",
 			"translate": [0, -24, 0],
-			"submodels": [
-				{
-					"id": "jacket2",
-							"invertAxis": "xy",
-							"translate": [0, 0, 0],
-							"boxes": [
-								{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
-							]
-				}
-			],
 			"boxes": [
-				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 16]}
+				{
+					"coordinates": [-4, 12, -2, 8, 12, 4],
+					"uvNorth": [20, 20, 28, 32],
+					"uvEast": [16, 20, 20, 32],
+					"uvSouth": [32, 20, 40, 32],
+					"uvWest": [28, 20, 32, 32],
+					"uvUp": [28, 20, 20, 16],
+					"uvDown": [36, 16, 28, 20]
+				}
 			]
 		},
 		{
@@ -5332,116 +5347,49 @@
 			"id": "jacket",
 			"invertAxis": "xy",
 			"translate": [0, -24, 0],
-			"submodels": [
+			"boxes": [
 				{
-					"id": "upperbody",
-					"invertAxis": "xy",
-					"translate": [0, 12, 0],
-					"submodels": [
-						{
-							"id": "head2",
-							"invertAxis": "xy",
-							"translate": [0, 12, 0]
-						}
-					]
+					"coordinates": [-4.25, 11.75, -2.25, 8.5, 12.5, 4.5],
+					"uvNorth": [20, 36, 28, 48],
+					"uvEast": [16, 36, 20, 48],
+					"uvSouth": [32, 36, 40, 48],
+					"uvWest": [28, 36, 32, 48],
+					"uvUp": [28, 36, 20, 32],
+					"uvDown": [36, 32, 28, 36]
 				}
-			],
-			"animations": [
+			]
+		},
+		{
+			"part": "right_arm",
+			"id": "right_arm",
+			"invertAxis": "xy",
+			"translate": [-5, -22, 0],
+			"boxes": [
 				{
-					"var.shuffle": "clamp(cos(limb_swing*-1*0.725)*limb_speed, -1, 1)",
-					"var.leg": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 0)",
-					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
-					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
-					"var.random": "random(time)",
-					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
-					"var.is_on_fire": "if(((((height_above_ground > 6 && is_on_ground == false && is_gliding == false) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true) && is_blocking == false, 1, 0)",
-					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
-					"var.idle_rate": "-sin(time*0.075)*0.3",
-					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)",
-					"var.moving_up": "if(var.pos_y != player_pos_y, 1, 0)",
-					"var.a": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-30), torad(25)), 0)",
-					"var.b": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(25), torad(-30)), 0)",
-					"var.c": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
-					"var.d": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
-					"var.pos_y": "player_pos_y"
-				},
+					"coordinates": [4, 12, -2, 4, 12, 4],
+					"uvNorth": [44, 20, 48, 32],
+					"uvEast": [40, 20, 44, 32],
+					"uvSouth": [52, 20, 56, 32],
+					"uvWest": [48, 20, 52, 32],
+					"uvUp": [48, 20, 44, 16],
+					"uvDown": [52, 16, 48, 20]
+				}
+			]
+		},
+		{
+			"part": "right_sleeve",
+			"id": "right_sleeve",
+			"invertAxis": "xy",
+			"translate": [-5, -22, 0],
+			"boxes": [
 				{
-					"var.ll_tx": "2.1",
-					"var.ll_ty": "if(var.is_crouching != 1, if(is_swimming == true, 11.95, (var.leg*3.2 + 11.95) + 0), (var.leg*3.2 + 11.95) + 0.75)",
-					"var.ll_tz": "if(var.is_crouching != 1, if(is_swimming == true || (fluid_depth_up > 2), 0, (-var.shuffle*2.25) + 0), (-var.shuffle*2.25) + 4.5)",
-					"var.rl_tx": "-2.1",
-					"var.rl_ty": "if(var.is_crouching != 1, if(is_swimming == true, 11.95, (-var.leg*3.2 + 11.95) + limb_speed*-1.6), (-var.leg*3.2 + 11.95) + 0.75)",
-					"var.rl_tz": "if(var.is_crouching != 1, if(is_swimming == true || (fluid_depth_up > 2), 0, (var.shuffle*2.25) + 0), (var.shuffle*2.25) + 4.5)",
-					"var.lh_tx": "1",
-					"var.lh_ty": "(var.idle_rate) + left_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
-					"var.lh_tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)",
-					"var.rh_tx": "1",
-					"var.rh_ty": "(var.idle_rate) + right_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
-					"var.rh_tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)"
-				},
-				{
-					"var.ll_rx": "if(is_climbing == true, torad(-60), if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_riding == false, if(is_swimming == true, 0, if(is_gliding == false, if(fluid_depth_up > 2, sin(var.fakeswing)*limb_speed + sin(time*0.1)*0.2, sin(var.fakeswing)*limb_speed), sin(var.fakeswing)*limb_speed*0.175) + if(limb_speed < 0.05, left_leg.rx, 0)), torad(-90)), sin(time*0.7)*0.5)) + var.d",
-					"var.ll_ry": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, torad(0) + left_leg.ry, torad(-10) + left_leg.ry)",
-					"var.ll_rz": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_swimming == true, sin(limb_swing*0.24)*0.4 + torad(-30), if(fluid_depth_up > 2, torad(-7) + left_leg.rz, left_leg.rz)), torad(-10) + left_leg.rz)",
-					"var.rl_rx": "if(is_climbing == true, torad(-47), if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_riding == false, if(is_swimming == true, 0, if(is_gliding == false, if(fluid_depth_up > 2, -(sin(var.fakeswing)*limb_speed + sin(time*0.1)*0.2), -(sin(var.fakeswing)*limb_speed)), -(sin(var.fakeswing)*limb_speed*0.175)) + if(limb_speed < 0.05, right_leg.rx, 0)), torad(-90)), -(sin(time*0.7)*0.55))) + var.c",
-					"var.rl_ry": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, torad(0) + right_leg.ry, torad(10) + right_leg.ry)",
-					"var.rl_rz": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_swimming == true, sin(limb_swing*0.24)*-0.4 + torad(30), if(fluid_depth_up > 2, torad(7) + right_leg.rz, right_leg.rz)), torad(10) + right_leg.rz)",
-					"var.lh_rx": "if(is_climbing == true, torad(-105), if(var.is_on_fire == 1, torad(180) + sin(-time*0.6)*0.8*var.fall_rate, left_arm.rx)) + var.b",
-					"var.lh_ry": "if(fluid_depth_up > 2, torad(-15) + left_arm.ry, left_arm.ry)",
-					"var.lh_rz": "if(var.is_on_fire == 1, torad(30) + left_arm.rz, if(is_gliding == true, torad(-23), if(fluid_depth_up > 2, torad(-20) + left_arm.rz, left_arm.rz)))",
-					"var.rh_rx": "if(is_climbing == true, torad(-80), if(var.is_on_fire == 1, torad(180) + (sin(time*0.6)*0.8)*var.fall_rate, right_arm.rx)) + var.a",
-					"var.rh_ry": "if(fluid_depth_up > 2, torad(15) + right_arm.ry, right_arm.ry)",
-					"var.rh_rz": "if(var.is_on_fire == 1, torad(-30) + right_arm.rz, if(is_gliding == true, torad(23), if(fluid_depth_up > 2, torad(20) + right_arm.rz, right_arm.rz)))"
-				},
-				{
-					"left_leg.tx": "var.ll_tx",
-					"left_leg.ty": "var.ll_ty",
-					"left_leg.tz": "var.ll_tz",
-					"left_leg.rx": "var.ll_rx",
-					"left_leg.ry": "var.ll_ry",
-					"left_leg.rz": "var.ll_rz"
-				},
-				{
-					"right_leg.tx": "var.rl_tx",
-					"right_leg.ty": "var.rl_ty",
-					"right_leg.tz": "var.rl_tz",
-					"right_leg.rx": "var.rl_rx",
-					"right_leg.ry": "var.rl_ry",
-					"right_leg.rz": "var.rl_rz"
-				},
-				{
-					"right_arm.rx": "var.rh_rx",
-					"right_arm.rz": "var.rh_rz",
-					"right_arm.ry": "var.rh_ry",
-					"right_arm.ty": "var.rh_ty",
-					"right_arm.tz": "var.rh_tz"
-				},
-				{
-					"left_arm.rx": "var.lh_rx",
-					"left_arm.rz": "var.lh_rz",
-					"left_arm.ry": "var.lh_ry",
-					"left_arm.ty": "var.lh_ty",
-					"left_arm.tz": "var.lh_tz"
-				},
-				{
-					"upperbody.rz": "-var.swing*0.025",
-					"upperbody.ry": "-var.shuffle*0.017",
-					"upperbody.ty": "if(var.is_crouching == 1, var.idle_rate - 13.5, if((limb_speed > 0.05 && is_swimming == false) || true == true, -12.25+sin(limb_swing*1)*limb_speed*0.9, var.idle_rate - 11.95))",
-					"upperbody.rx": "if((limb_speed > 0.05 && is_swimming == false) || var.is_crouching == 1, if(var.is_crouching == 1, torad(0), torad(0 + (limb_speed * 8)) ), 0)",
-					"upperbody.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
-					"body.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_on_fire == 0, 0, sin(time*0.75)*0.1)",
-					"body.rx": "if(var.is_crouching == 1, body.rx, if((limb_speed > 0.05 && is_swimming == false), torad(0 + (limb_speed * 8)), 0))",
-					"body.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
-					"body.ty": "if((limb_speed > 0.05 && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + body.ty)",
-					"jacket2.tz": "0.2",
-					"jacket.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_on_fire == 0, 0, sin(time*0.75)*0.1)"
-				},
-				{
-					"head.rx": "if(is_swimming == true || is_gliding == true, torad(-90) + torad(head_pitch * 0.3), if(hurt_time == 0, torad(-(3 + (limb_speed * 2) ) + (head_pitch)) + torad(-6*hurt_time) + (sin(limb_swing*1)*limb_speed*0.075), torad(head_pitch + (-6*hurt_time))))",
-					"head.rz": "if(var.is_crouching == 0 && hurt_time == 10, torad(move_strafing * (-17.5)), 0)",
-					"head.ry": "if(is_swimming == true, -torad(head_yaw), torad(head_yaw))",
-					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
-					"head.ty": "if((limb_speed > 0.05  && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9, (var.idle_rate) + head.ty)"
+					"coordinates": [3.75, 11.75, -2.25, 4.5, 12.5, 4.5],
+					"uvNorth": [44, 36, 48, 48],
+					"uvEast": [40, 36, 44, 48],
+					"uvSouth": [52, 36, 56, 48],
+					"uvWest": [48, 36, 52, 48],
+					"uvUp": [48, 36, 44, 32],
+					"uvDown": [52, 32, 48, 36]
 				}
 			]
 		},
@@ -5449,36 +5397,103 @@
 			"part": "left_arm",
 			"id": "left_arm",
 			"invertAxis": "xy",
-			"translate": [-5, -22, 0],
+			"translate": [5, -22, 0],
 			"boxes": [
-				{"coordinates": [2.5, 12, -2, 3, 12, 4], "textureOffset": [32, 48]}
+				{
+					"coordinates": [-8, 12, -2, 4, 12, 4],
+					"uvNorth": [36, 52, 40, 64],
+					"uvEast": [32, 52, 36, 64],
+					"uvSouth": [44, 52, 48, 64],
+					"uvWest": [40, 52, 44, 64],
+					"uvUp": [40, 52, 36, 48],
+					"uvDown": [44, 48, 40, 52]
+				}
 			]
 		},
 		{
-			"part": "right_arm",
-			"id": "right_arm",
+			"part": "left_sleeve",
+			"id": "left_sleeve",
 			"invertAxis": "xy",
 			"translate": [5, -22, 0],
 			"boxes": [
-				{"coordinates": [-5.5, 12, -2, 3, 12, 4], "textureOffset": [40, 16]}
-			]
-		},
-		{
-			"part": "left_leg",
-			"id": "left_leg",
-			"invertAxis": "xy",
-			"translate": [-2, -12, 0],
-			"boxes": [
-				{"coordinates": [0, 0, -2, 4, 12, 4], "textureOffset": [16, 48]}
+				{
+					"coordinates": [-8.25, 11.75, -2.25, 4.5, 12.5, 4.5],
+					"uvNorth": [52, 52, 56, 64],
+					"uvEast": [48, 52, 52, 64],
+					"uvSouth": [60, 52, 64, 64],
+					"uvWest": [56, 52, 60, 64],
+					"uvUp": [56, 52, 52, 48],
+					"uvDown": [60, 48, 56, 52]
+				}
 			]
 		},
 		{
 			"part": "right_leg",
 			"id": "right_leg",
 			"invertAxis": "xy",
+			"translate": [-2, -12, 0],
+			"boxes": [
+				{"coordinates": [0, 0, -2, 4, 12, 4], "textureOffset": [0, 16]}
+			]
+		},
+		{
+			"part": "right_pants",
+			"id": "right_pants",
+			"invertAxis": "xy",
+			"translate": [-2, -12, 0],
+			"boxes": [
+				{
+					"coordinates": [-0.25, -0.25, -2.25, 4.5, 12.5, 4.5],
+					"uvNorth": [4, 36, 8, 48],
+					"uvEast": [0, 36, 4, 48],
+					"uvSouth": [12, 36, 16, 48],
+					"uvWest": [8, 36, 12, 48],
+					"uvUp": [8, 36, 4, 32],
+					"uvDown": [12, 32, 8, 36]
+				}
+			]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
 			"translate": [2, -12, 0],
 			"boxes": [
-				{"coordinates": [-4, 0, -2, 4, 12, 4], "textureOffset": [0, 16]}
+				{"coordinates": [-4, 0, -2, 4, 12, 4], "textureOffset": [16, 48]}
+			]
+		},
+		{
+			"part": "left_pants",
+			"id": "left_pants",
+			"invertAxis": "xy",
+			"translate": [2, -12, 0],
+			"boxes": [
+				{
+					"coordinates": [-4.25, -0.25, -2.25, 4.5, 12.5, 4.5],
+					"uvNorth": [4, 52, 8, 64],
+					"uvEast": [0, 52, 4, 64],
+					"uvSouth": [12, 52, 16, 64],
+					"uvWest": [8, 52, 12, 64],
+					"uvUp": [8, 52, 4, 48],
+					"uvDown": [12, 48, 8, 52]
+				}
+			]
+		},
+		{
+			"part": "cloak",
+			"id": "cloak",
+			"invertAxis": "xy",
+			"translate": [0, -24, -2],
+			"boxes": [
+				{
+					"coordinates": [-5, 8, 2, 10, 16, 1],
+					"uvNorth": [1, 2, 11, 34],
+					"uvEast": [0, 2, 1, 34],
+					"uvSouth": [12, 2, 22, 34],
+					"uvWest": [11, 2, 12, 34],
+					"uvUp": [1, 0, 11, 2],
+					"uvDown": [11, 0, 21, 2]
+				}
 			]
 		}
 	]
