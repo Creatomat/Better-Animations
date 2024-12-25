@@ -145,6 +145,10 @@
 					"head.ry": "if(is_swimming == true, -torad(head_yaw), torad(head_yaw))",
 					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"head.ty": "if((limb_speed > 0.05  && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9, (var.idle_rate) + head.ty)"
+				},
+				{
+					"left_sleeve.tx": "left_sleeve.tx + 0.5",
+					"right_sleeve.tx": "right_sleeve.tx - 0.5"
 				}
 			]
 		},
@@ -183,6 +187,172 @@
 			"boxes": [
 				{"coordinates": [-4, 0, -2, 4, 12, 4], "textureOffset": [0, 16]}
 			]
-		}
+		},
+		{
+      "texture": "",
+      "textureSize": [
+        64,
+        64
+      ],
+      "invertAxis": "xy",
+      "translate": [
+        -5.0,
+        -22.0,
+        0.0
+      ],
+      "rotate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mirrorTexture": "",
+      "boxes": [
+        {
+          "textureOffset": [
+            40,
+            32
+          ],
+          "uvDown": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvUp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvFront": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvBack": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvLeft": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvRight": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "coordinates": [
+            4.0,
+            12.0,
+            -2.0,
+            3.0,
+            12.0,
+            4.0
+          ],
+          "sizeAdd": 0.25,
+          "sizeAddX": 0.0,
+          "sizeAddY": 0.0,
+          "sizeAddZ": 0.0
+        }
+      ],
+      "submodels": [],
+      "baseId": "",
+      "model": "",
+      "id": "right_sleeve",
+      "part": "right_sleeve",
+      "attach": false,
+      "scale": 1.0,
+      "animations": []
+    	},
+		{
+      "texture": "",
+      "textureSize": [
+        64,
+        64
+      ],
+      "invertAxis": "xy",
+      "translate": [
+        5.0,
+        -22.0,
+        0.0
+      ],
+      "rotate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mirrorTexture": "",
+      "boxes": [
+        {
+          "textureOffset": [
+            48,
+            48
+          ],
+          "uvDown": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvUp": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvFront": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvBack": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvLeft": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uvRight": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "coordinates": [
+            -7.0,
+            12.0,
+            -2.0,
+            3.0,
+            12.0,
+            4.0
+          ],
+          "sizeAdd": 0.25,
+          "sizeAddX": 0.0,
+          "sizeAddY": 0.0,
+          "sizeAddZ": 0.0
+        }
+      ],
+      "submodels": [],
+      "baseId": "",
+      "model": "",
+      "id": "left_sleeve",
+      "part": "left_sleeve",
+      "attach": false,
+      "scale": 1.0,
+      "animations": []
+    	}
 	]
 }
