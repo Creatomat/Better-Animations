@@ -5358,11 +5358,13 @@
 					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
 					"var.idle_rate": "-sin(time*0.075)*0.3",
 					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)",
-					"var.moving_up": "if(var.pos_y != player_pos_y, 1, 0)",
-					"var.a": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-30), torad(25)), 0)",
-					"var.b": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(25), torad(-30)), 0)",
-					"var.c": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
-					"var.d": "if(is_climbing == true && var.moving_up == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
+					"var.moving": "if(var.pos_y != player_pos_y, 1, 0)",
+					"var.moving_up": "if(var.pos_y < player_pos_y, 1, 0)",
+					"var.moving_down": "if(var.pos_y > player_pos_y, 1, 0)",
+					"var.a": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(-30), torad(25)), 0)",
+					"var.b": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(25), torad(-30)), 0)",
+					"var.c": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
+					"var.d": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
 					"var.pos_y": "player_pos_y"
 				},
 				{
@@ -5442,6 +5444,10 @@
 					"head.ry": "if(is_swimming == true, -torad(head_yaw), torad(head_yaw))",
 					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"head.ty": "if((limb_speed > 0.05  && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9, (var.idle_rate) + head.ty)"
+				},
+				{
+					"left_sleeve.tx": "left_sleeve.tx + 0.5",
+					"right_sleeve.tx": "right_sleeve.tx - 0.5"
 				}
 			]
 		},
