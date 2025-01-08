@@ -5361,6 +5361,8 @@
 					"var.moving": "if(var.pos_y != player_pos_y, 1, 0)",
 					"var.moving_up": "if(var.pos_y < player_pos_y, 1, 0)",
 					"var.moving_down": "if(var.pos_y > player_pos_y, 1, 0)",
+					"var.floating_r": "if(fluid_depth_up > 2, if(var.moving_up == 1, torad(7.5) + right_arm.rz, if(var.moving_down == 1, torad(32.5) + right_arm.rz, torad(20) + right_arm.rz)), right_arm.rz)",
+					"var.floating_l": "if(fluid_depth_up > 2, if(var.moving_up == 1, torad(-7.5) + left_arm.rz, if(var.moving_down == 1, torad(-32.5) + left_arm.rz, torad(-20) + left_arm.rz)), left_arm.rz)",
 					"var.a": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(-30), torad(25)), 0)",
 					"var.b": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(25), torad(-30)), 0)",
 					"var.c": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
@@ -5370,10 +5372,10 @@
 				{
 					"var.ll_tx": "2.1",
 					"var.ll_ty": "if(var.is_crouching != 1, if(is_swimming == true, 11.95, (var.leg*3.2 + 11.95) + 0), (var.leg*3.2 + 11.95) + 0.75)",
-					"var.ll_tz": "if(var.is_crouching != 1, if(is_swimming == true || (fluid_depth_up > 2), 0, (-var.shuffle*2.25) + 0), (-var.shuffle*2.25) + 4.5)",
+					"var.ll_tz": "if(var.is_crouching != 1, if(is_swimming == true || (fluid_depth_up > 2), if(is_swimming == true, 1.2, 0), (-var.shuffle*2.25) + 0), (-var.shuffle*2.25) + 4.5)",
 					"var.rl_tx": "-2.1",
 					"var.rl_ty": "if(var.is_crouching != 1, if(is_swimming == true, 11.95, (-var.leg*3.2 + 11.95) + limb_speed*-1.6), (-var.leg*3.2 + 11.95) + 0.75)",
-					"var.rl_tz": "if(var.is_crouching != 1, if(is_swimming == true || (fluid_depth_up > 2), 0, (var.shuffle*2.25) + 0), (var.shuffle*2.25) + 4.5)",
+					"var.rl_tz": "if(var.is_crouching != 1, if(is_swimming == true || (fluid_depth_up > 2), if(is_swimming == true, 1.2, 0), (var.shuffle*2.25) + 0), (var.shuffle*2.25) + 4.5)",
 					"var.lh_tx": "1",
 					"var.lh_ty": "(var.idle_rate) + left_arm.ty + sin(limb_swing*1)*limb_speed*0.9",
 					"var.lh_tz": "if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25), 0)",
@@ -5390,10 +5392,10 @@
 					"var.rl_rz": "if(is_on_ground == 1 || is_riding == true || var.is_falling == 0, if(is_swimming == true, sin(limb_swing*0.24)*-0.4 + torad(30), if(fluid_depth_up > 2, torad(7) + right_leg.rz, right_leg.rz)), torad(10) + right_leg.rz)",
 					"var.lh_rx": "if(is_climbing == true, torad(-105), if(var.is_on_fire == 1, torad(180) + sin(-time*0.6)*0.8*var.fall_rate, left_arm.rx)) + var.b",
 					"var.lh_ry": "if(fluid_depth_up > 2, torad(-15) + left_arm.ry, left_arm.ry)",
-					"var.lh_rz": "if(var.is_on_fire == 1, torad(30) + left_arm.rz, if(is_gliding == true, torad(-23), if(fluid_depth_up > 2, torad(-20) + left_arm.rz, left_arm.rz)))",
+					"var.lh_rz": "if(var.is_on_fire == 1, torad(30) + left_arm.rz, if(is_gliding == true, torad(-23), var.floating_l))",
 					"var.rh_rx": "if(is_climbing == true, torad(-80), if(var.is_on_fire == 1, torad(180) + (sin(time*0.6)*0.8)*var.fall_rate, right_arm.rx)) + var.a",
 					"var.rh_ry": "if(fluid_depth_up > 2, torad(15) + right_arm.ry, right_arm.ry)",
-					"var.rh_rz": "if(var.is_on_fire == 1, torad(-30) + right_arm.rz, if(is_gliding == true, torad(23), if(fluid_depth_up > 2, torad(20) + right_arm.rz, right_arm.rz)))"
+					"var.rh_rz": "if(var.is_on_fire == 1, torad(-30) + right_arm.rz, if(is_gliding == true, torad(23), var.floating_r))"
 				},
 				{
 					"left_leg.tx": "var.ll_tx",
@@ -5432,7 +5434,7 @@
 					"upperbody.rx": "if((limb_speed > 0.05 && is_swimming == false) || var.is_crouching == 1, if(var.is_crouching == 1, torad(0), torad(0 + (limb_speed * 8)) ), 0)",
 					"upperbody.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"body.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_on_fire == 0, 0, sin(time*0.75)*0.1)",
-					"body.rx": "if(var.is_crouching == 1, body.rx, if((limb_speed > 0.05 && is_swimming == false), torad(0 + (limb_speed * 8)), 0))",
+					"body.rx": "if(var.is_crouching == 1, body.rx, if((limb_speed > 0.05), torad(0 + (limb_speed * 8)), 0))",
 					"body.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"body.ty": "if((limb_speed > 0.05 && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + body.ty)",
 					"jacket2.tz": "0.2",
