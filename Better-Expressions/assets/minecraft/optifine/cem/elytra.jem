@@ -37,8 +37,8 @@
 					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)"
 				},
 				{
-					"left_wing.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + left_wing.ty)",
-					"right_wing.ty": "if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + right_wing.ty)",
+					"left_wing.ty": "if(is_gliding == true, 0, if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + left_wing.ty))",
+					"right_wing.ty": "if(is_gliding == true, 0, if(limb_speed > 0.05 && var.is_crouching == 0,sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + right_wing.ty))",
 					"left_wing.tz": "if(limb_speed > 0.05, (limb_speed * -1.25), 0)",
 					"right_wing.tz": "if(limb_speed > 0.05, (limb_speed * -1.25), 0)",
 					"left_wing.rx": "if(is_swimming == true, 0, left_wing.rx)",
