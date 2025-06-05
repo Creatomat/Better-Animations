@@ -5444,9 +5444,9 @@
 					"jacket.ry": "if((is_on_ground == 1 || is_riding == true) || var.is_on_fire == 0, 0, sin(time*0.75)*0.1)"
 				},
 				{
-					"head.rx": "if(is_swimming == true || is_gliding == true, torad(-90) + torad(head_pitch * 0.3), if(hurt_time == 0, torad(-(3 + (limb_speed * 2) ) + (head_pitch)) + torad(-6*hurt_time) + (sin(limb_swing*1)*limb_speed*0.075), torad(head_pitch + (-6*hurt_time))))",
-					"head.rz": "if(var.is_crouching == 0 && hurt_time == 10, torad(move_strafing * (-17.5)), 0)",
-					"head.ry": "if(is_swimming == true, -torad(head_yaw), torad(head_yaw))",
+					"head.rx": "if(is_swimming == true || is_gliding == true || is_crawling == true, torad(-65), if(hurt_time == 0, torad(-(3 + (limb_speed * 2) ) + (head_pitch)) + torad(-6*hurt_time) + (sin(limb_swing*1)*limb_speed*0.075), torad(head_pitch + (-6*hurt_time))))",
+					"head.rz": "if(is_crawling == true, head.rz, if(var.is_crouching == 0 && hurt_time == 10, torad(move_strafing * (-17.5)), 0))",
+					"head.ry": "if(is_crawling == true, head.ry, if(is_swimming == true, -torad(head_yaw), torad(head_yaw)))",
 					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"head.ty": "if((limb_speed > 0.05  && is_swimming == false) && var.is_crouching == 0, if(is_gliding == true, head.ty, sin(limb_swing*1)*limb_speed*0.9), (var.idle_rate) + head.ty)"
 				}
