@@ -119,12 +119,12 @@
 					"right_leg.rz": "var.rl_rz"
 				},
 				{
-					"right_arm.rx": "var.rh_rx",
-					"right_arm.rz": "var.rh_rz",
-					"right_arm.ry": "var.rh_ry",
-					"right_arm.ty": "var.rh_ty",
-					"right_arm.tz": "var.rh_tz",
-					"right_arm.tx": "var.rh_tx"
+					"right_arm.rx": "if(is_first_person_hand == true, right_arm.rx, var.rh_rx)",
+					"right_arm.rz": "if(is_first_person_hand == true, right_arm.rz, var.rh_rz)",
+					"right_arm.ry": "if(is_first_person_hand == true, right_arm.ry, var.rh_ry)",
+					"right_arm.ty": "if(is_first_person_hand == true, right_arm.ty, var.rh_ty)",
+					"right_arm.tz": "if(is_first_person_hand == true, right_arm.tz, var.rh_tz)",
+					"right_arm.tx": "if(is_first_person_hand == true, right_arm.tx, var.rh_tx)"
 				},
 				{
 					"left_arm.rx": "var.lh_rx",

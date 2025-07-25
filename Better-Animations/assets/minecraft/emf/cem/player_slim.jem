@@ -72,7 +72,7 @@
 					"var.c": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
 					"var.d": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
 					"var.pos_y": "player_pos_y",
-					"var.jumping": "if(height_above_ground > 1, 1, 0)"
+					"var.jumping": "if(height_above_ground > 1 && is_in_water == false, 1, 0)"
 				},
 				{
 					"var.ll_tx": "2.1 + if(death_time > 0, -2, 0)",
@@ -119,12 +119,12 @@
 					"right_leg.rz": "var.rl_rz"
 				},
 				{
-					"right_arm.rx": "var.rh_rx",
-					"right_arm.rz": "var.rh_rz",
-					"right_arm.ry": "var.rh_ry",
-					"right_arm.ty": "var.rh_ty",
-					"right_arm.tz": "var.rh_tz",
-					"right_arm.tx": "var.rh_tx"
+					"right_arm.rx": "if(is_first_person_hand == true, right_arm.rx, var.rh_rx)",
+					"right_arm.rz": "if(is_first_person_hand == true, right_arm.rz, var.rh_rz)",
+					"right_arm.ry": "if(is_first_person_hand == true, right_arm.ry, var.rh_ry)",
+					"right_arm.ty": "if(is_first_person_hand == true, right_arm.ty, var.rh_ty)",
+					"right_arm.tz": "if(is_first_person_hand == true, right_arm.tz, var.rh_tz)",
+					"right_arm.tx": "if(is_first_person_hand == true, right_arm.tx, var.rh_tx)"
 				},
 				{
 					"left_arm.rx": "var.lh_rx",
