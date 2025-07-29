@@ -72,7 +72,7 @@
 					"var.c": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(-20), torad(15)), 0)",
 					"var.d": "if(is_climbing == true && var.moving == 1, keyframeloop(time/10, torad(15), torad(-20)), 0)",
 					"var.pos_y": "player_pos_y",
-					"var.jumping": "if(height_above_ground > 1 && is_in_water == false, 1, 0)"
+					"var.jumping": "if(height_above_ground > 1 && is_in_water == false && is_on_ground == false, 1, 0)"
 				},
 				{
 					"var.ll_tx": "2.1 + if(death_time > 0, -2, 0)",
@@ -103,36 +103,36 @@
 					"var.rh_rz": "if(var.is_on_fire == 1, if(var.is_falling == 1, torad(150)*var.vert_speed + right_arm.rz, torad(150) + right_arm.rz), if(is_gliding == true, torad(23), var.floating_r + torad(hurt_time*6) + if(var.jumping == 1, torad(20)*clamp(height_above_ground*0.4, 0, 1), 0)))"
 				},
 				{
-					"left_leg.tx": "var.ll_tx",
-					"left_leg.ty": "var.ll_ty",
-					"left_leg.tz": "var.ll_tz",
-					"left_leg.rx": "var.ll_rx",
-					"left_leg.ry": "var.ll_ry",
-					"left_leg.rz": "var.ll_rz"
+					"left_leg.tx": "if(is_in_gui == true, left_leg.tx, var.ll_tx)",
+					"left_leg.ty": "if(is_in_gui == true, left_leg.ty, var.ll_ty)",
+					"left_leg.tz": "if(is_in_gui == true, left_leg.tz, var.ll_tz)",
+					"left_leg.rx": "if(is_in_gui == true, left_leg.rx, var.ll_rx)",
+					"left_leg.ry": "if(is_in_gui == true, left_leg.ry, var.ll_ry)",
+					"left_leg.rz": "if(is_in_gui == true, left_leg.rz, var.ll_rz)"
 				},
 				{
-					"right_leg.tx": "var.rl_tx",
-					"right_leg.ty": "var.rl_ty",
-					"right_leg.tz": "var.rl_tz",
-					"right_leg.rx": "var.rl_rx",
-					"right_leg.ry": "var.rl_ry",
-					"right_leg.rz": "var.rl_rz"
+					"right_leg.tx": "if(is_in_gui == true, right_leg.tx, var.rl_tx)",
+					"right_leg.ty": "if(is_in_gui == true, right_leg.ty, var.rl_ty)",
+					"right_leg.tz": "if(is_in_gui == true, right_leg.tz, var.rl_tz)",
+					"right_leg.rx": "if(is_in_gui == true, right_leg.rx, var.rl_rx)",
+					"right_leg.ry": "if(is_in_gui == true, right_leg.ry, var.rl_ry)",
+					"right_leg.rz": "if(is_in_gui == true, right_leg.rz, var.rl_rz)"
 				},
 				{
-					"right_arm.rx": "if(is_first_person_hand == true, right_arm.rx, var.rh_rx)",
-					"right_arm.rz": "if(is_first_person_hand == true, right_arm.rz, var.rh_rz)",
-					"right_arm.ry": "if(is_first_person_hand == true, right_arm.ry, var.rh_ry)",
-					"right_arm.ty": "if(is_first_person_hand == true, right_arm.ty, var.rh_ty)",
-					"right_arm.tz": "if(is_first_person_hand == true, right_arm.tz, var.rh_tz)",
-					"right_arm.tx": "if(is_first_person_hand == true, right_arm.tx, var.rh_tx)"
+					"right_arm.rx": "if(is_first_person_hand == true || is_in_gui == true, right_arm.rx, var.rh_rx)",
+					"right_arm.rz": "if(is_first_person_hand == true || is_in_gui == true, right_arm.rz, var.rh_rz)",
+					"right_arm.ry": "if(is_first_person_hand == true || is_in_gui == true, right_arm.ry, var.rh_ry)",
+					"right_arm.ty": "if(is_first_person_hand == true || is_in_gui == true, right_arm.ty, var.rh_ty)",
+					"right_arm.tz": "if(is_first_person_hand == true || is_in_gui == true, right_arm.tz, var.rh_tz)",
+					"right_arm.tx": "if(is_first_person_hand == true || is_in_gui == true, right_arm.tx, var.rh_tx)"
 				},
 				{
-					"left_arm.rx": "var.lh_rx",
-					"left_arm.rz": "var.lh_rz",
-					"left_arm.ry": "var.lh_ry",
-					"left_arm.ty": "var.lh_ty",
-					"left_arm.tz": "var.lh_tz",
-					"left_arm.tx": "var.lh_tx"
+					"left_arm.rx": "if(is_in_gui == true, left_arm.rx, var.lh_rx)",
+					"left_arm.rz": "if(is_in_gui == true, left_arm.rz, var.lh_rz)",
+					"left_arm.ry": "if(is_in_gui == true, left_arm.ry, var.lh_ry)",
+					"left_arm.ty": "if(is_in_gui == true, left_arm.ty, var.lh_ty)",
+					"left_arm.tz": "if(is_in_gui == true, left_arm.tz, var.lh_tz)",
+					"left_arm.tx": "if(is_in_gui == true, left_arm.tx, var.lh_tx)"
 				},
 				{
 					"upperbody.rz": "-var.swing*0.025",
