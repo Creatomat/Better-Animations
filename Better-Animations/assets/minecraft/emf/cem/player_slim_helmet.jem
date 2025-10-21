@@ -1,53 +1,15 @@
 {
 	"credit": "Made with Blockbench",
-	"textureSize": [64, 64],
+	"textureSize": [64, 32],
 	"models": [
 		{
 			"part": "head",
 			"id": "head",
 			"invertAxis": "xy",
-			"translate": [0, -24, 0],
+			"translate": [0, -23, 0],
 			"boxes": [
-				{"coordinates": [-4, 24, -4, 8, 8, 8], "textureOffset": [0, 0]}
-			]
-		},
-		{
-			"part": "body",
-			"id": "body",
-			"invertAxis": "xy",
-			"translate": [0, -24, 0],
-			"submodels": [
-				{
-					"id": "jacket2",
-							"invertAxis": "xy",
-							"translate": [0, 0, 0],
-							"boxes": [
-								{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
-							]
-				}
-			],
-			"boxes": [
-				{"coordinates": [-4, 12, -2, 8, 12, 4], "textureOffset": [16, 16]}
-			]
-		},
-		{
-			"part": "jacket",
-			"id": "jacket",
-			"invertAxis": "xy",
-			"translate": [0, -24, 0],
-			"submodels": [
-				{
-					"id": "upperbody",
-					"invertAxis": "xy",
-					"translate": [0, 12, 0],
-					"submodels": [
-						{
-							"id": "head2",
-							"invertAxis": "xy",
-							"translate": [0, 12, 0]
-						}
-					]
-				}
+				{"coordinates": [-4, 23, -4, 8, 8, 8], "textureOffset": [0, 0], "sizeAdd": 0.75},
+				{"coordinates": [-4, 23, -4, 8, 8, 8], "textureOffset": [32, 0], "sizeAdd": 1}
 			],
 			"animations": [
 				{
@@ -56,7 +18,7 @@
 					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
 					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
 					"var.random": "random(time)",
-					"var.is_flying": "if(var.vert_speed != 0 || is_on_ground == true || height_above_ground < 3, 0, 0)",
+					"var.is_flying": "if(var.vert_speed != 0 || is_on_ground == true || height_above_ground < 3, 0, 1)",
 					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
 					"var.is_on_fire": "if(((((height_above_ground > 6 && is_on_ground == false && is_gliding == false && var.moving_down == 1 && (var.vert_speed > 0.45)) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true) && is_blocking == false, 1, 0)",
 					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6) && (var.moving_down == 1), 1, 0)",
@@ -155,42 +117,6 @@
 					"head.tz": "if(var.is_crouching == 1, 0, if(limb_speed > 0.05, (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05)))",
 					"head.ty": "if((limb_speed > 0.05  && is_swimming == false) && var.is_crouching == 0, if(is_gliding == true, head.ty, sin(limb_swing*1)*limb_speed*0.9), (var.idle_rate) + head.ty)"
 				}
-			]
-		},
-		{
-			"part": "left_arm",
-			"id": "left_arm",
-			"invertAxis": "xy",
-			"translate": [-5, -22, 0],
-			"boxes": [
-				{"coordinates": [2, 12, -2, 4, 12, 4], "textureOffset": [32, 48]}
-			]
-		},
-		{
-			"part": "right_arm",
-			"id": "right_arm",
-			"invertAxis": "xy",
-			"translate": [5, -22, 0],
-			"boxes": [
-				{"coordinates": [-6, 12, -2, 4, 12, 4], "textureOffset": [40, 16]}
-			]
-		},
-		{
-			"part": "left_leg",
-			"id": "left_leg",
-			"invertAxis": "xy",
-			"translate": [-2, -12, 0],
-			"boxes": [
-				{"coordinates": [0, 0, -2, 4, 12, 4], "textureOffset": [16, 48]}
-			]
-		},
-		{
-			"part": "right_leg",
-			"id": "right_leg",
-			"invertAxis": "xy",
-			"translate": [2, -12, 0],
-			"boxes": [
-				{"coordinates": [-4, 0, -2, 4, 12, 4], "textureOffset": [0, 16]}
 			]
 		}
 	]

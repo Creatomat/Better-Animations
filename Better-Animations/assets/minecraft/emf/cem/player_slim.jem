@@ -56,7 +56,7 @@
 					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
 					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
 					"var.random": "random(time)",
-					"var.is_flying": "if(var.vert_speed != 0 || is_on_ground == true || height_above_ground < 3, 0, 1)",
+					"var.is_flying": "if(var.vert_speed != 0 || is_on_ground == true || height_above_ground < 3, 0, 0)",
 					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
 					"var.is_on_fire": "if(((((height_above_ground > 6 && is_on_ground == false && is_gliding == false && var.moving_down == 1 && (var.vert_speed > 0.45)) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true) && is_blocking == false, 1, 0)",
 					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6) && (var.moving_down == 1), 1, 0)",
