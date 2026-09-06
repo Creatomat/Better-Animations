@@ -107,8 +107,8 @@
 					"var.pos_y": "player_pos_y"
         },
         {
-					"cape.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05))) + 2",
-					"cape.ty": "if((limb_speed > 0.05 && is_swimming == false) && var.is_crouching == 0, sin(limb_swing*1)*limb_speed*0.9,(var.idle_rate) + body.ty)",
+					"cape.tz": "if(var.is_crouching == 1, 0, if((limb_speed > 0.05 && is_swimming == false), (limb_speed * -1.25 * move_forward) + if(hurt_time == 10, 0, hurt_time*0.05), 0 + if(hurt_time == 10, 0, hurt_time*0.05))) + 2",
+					"cape.ty": "if((limb_speed > 0.05 && is_swimming == false) && var.is_crouching == 0, if(is_on_ground, sin(limb_swing*1)*limb_speed*0.9, cape.ty),(var.idle_rate) + body.ty)",
 					"cape.rx": "cape.rx + torad(hurt_time*-5)"
         }
       ]

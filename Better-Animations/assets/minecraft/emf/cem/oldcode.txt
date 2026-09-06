@@ -1,0 +1,6 @@
+    "var.a": "if(is_climbing && var.moving == 1, keyframeloop(time / 10, torad(-30), torad(25)), 0)",
+    "var.b": "if(is_climbing && var.moving == 1, keyframeloop(time / 10, torad(25), torad(-30)), 0)",
+    "var.c": "if(is_climbing && var.moving == 1, keyframeloop(time / 10, torad(-20), torad(15)), 0)",
+    "var.d": "if(is_climbing && var.moving == 1, keyframeloop(time / 10, torad(15), torad(-20)), 0)",
+	sin(var.fakeswing) * limb_speed + sin(time * 0.1) * 0.2
+	-(sin(var.fakeswing) * limb_speed + sin(time * 0.1) * 0.2)
