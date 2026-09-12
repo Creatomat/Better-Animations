@@ -85,7 +85,7 @@
     "var.lh_ty": "if(is_on_ground, if(is_gliding, left_arm.ty, var.idle_rate + left_arm.ty + sin(limb_swing) * limb_speed * 0.9), left_arm.ty)",
     "var.lh_tz": "if(limb_speed > 0.05 && !is_swimming, limb_speed * -1.25, left_arm.tz) + if(death_time > 0, -5, 0)",
     "var.rh_tx": "right_arm.tx + if(death_time > 0, 5, 0)",
-    "var.rh_ty": "if(is_on_ground, if(is_gliding, right_arm.ty, var.idle_rate + right_arm.ty + sin(limb_swing) * limb_speed * 0.9), right_arm.ty",
+    "var.rh_ty": "if(is_on_ground, if(is_gliding, right_arm.ty, var.idle_rate + right_arm.ty + sin(limb_swing) * limb_speed * 0.9), right_arm.ty)",
     "var.rh_tz": "if(limb_speed > 0.05 && !is_swimming, limb_speed * -1.25, right_arm.tz) + if(death_time > 0, 5, 0)"
   },
   {

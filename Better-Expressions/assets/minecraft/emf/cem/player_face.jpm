@@ -34,8 +34,7 @@
 			"r_brows_overlay.tz": "var.JEface_LOD",
 			"l_brows_overlay.tz": "var.JEface_LOD",
 			"var.JEface_head_addition": "-head_yaw/(80 +160*var.JEface_ylook)/2",
-			"head.ry": "head.ry +var.JEface_head_addition",
-			"headwear.ry": "head.ry"
+			"head.ry": "head.ry +var.JEface_head_addition"
 		},
 		{
 			"var.JEface_header_2by1_standard": 0,
