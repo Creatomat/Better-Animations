@@ -1,0 +1,14 @@
+Removed unused and dead variables  
+Removed dead code from older animations  
+Fixed Left arm in first person view  
+Fixed Elytra animations  
+Fixed swimming and torso when walking  
+Applied Same fixes to other files  
+_______________________________________  
+Further verified that Better Combat and Not Enough Animations work again  
+  
+This update, v51.0 or v34.0 depending on what pack you are using, is a milestone update representing our ongoing commitment to keeping this compatible with other mods along with keeping it fast and efficient.  
+  
+The next update will include further fixes and a brand new swimming animation!!  
+  
+Love ya'll :)  Enjoy!!!!
