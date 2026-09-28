@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source_folder="/home/creatomat/Desktop/projects/github/Better-Animations/Better-Expressions/"
+source_folder="/home/creatomat/Desktop/projects/Better-Animations/Better-Expressions/"
 items_to_compress=("assets" "pack.png" "pack.mcmeta" "LICENSE")
 zip_file="Better_Expressions.zip"
 

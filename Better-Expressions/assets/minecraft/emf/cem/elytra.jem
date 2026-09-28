@@ -25,24 +25,16 @@
 			],
 			"animations": [
 				{
-					"var.shuffle": "clamp(cos(limb_swing*-1*0.725)*limb_speed, -1, 1)",
-					"var.leg": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 0)",
-					"var.swing": "clamp(sin(limb_swing*0.725)*limb_speed, -1, 1)",
-					"var.fakeswing": "clamp(sin(limb_swing*0.725)*limb_speed*1, -1, 1)",
-					"var.random": "random(time)",
-					"var.is_crouching": "if(is_sneaking == true, 1, 0)",
-					"var.is_on_fire": "if((((height_above_ground > 6 && is_on_ground == false && is_gliding == false) && (is_riding == false && is_in_water == false)) && (is_climbing == false)) || is_burning == true, 1, 0)",
-					"var.is_falling": "if((var.is_on_fire == 1) && (height_above_ground > 6), 1, 0)",
-					"var.idle_rate": "-sin(time*0.075)*0.3",
-					"var.fall_rate": "if(height_above_ground < 6, 0.5, 1)"
+					"var.is_crouching": "if(is_sneaking, 1, 0)",
+					"var.idle_rate": "-sin(time * 0.075) * 0.3"
 				},
 				{
-					"left_wing.ty": "if(is_gliding == true, 0, if(limb_speed > 0.05 && var.is_crouching == 0,if(is_on_ground, sin(limb_swing*1)*limb_speed*0.9, left_wing.ty),(var.idle_rate) + left_wing.ty))",
-					"right_wing.ty": "if(is_gliding == true, 0, if(limb_speed > 0.05 && var.is_crouching == 0,if(is_on_ground, sin(limb_swing*1)*limb_speed*0.9, left_wing.ty),(var.idle_rate) + right_wing.ty))",
-					"left_wing.tz": "if(limb_speed > 0.05, (limb_speed * -1.25 * move_forward), 0)",
-					"right_wing.tz": "if(limb_speed > 0.05, (limb_speed * -1.25 * move_forward), 0)",
-					"left_wing.rx": "if(is_swimming == true, 0, left_wing.rx)",
-					"right_wing.rx": "if(is_swimming == true, 0, right_wing.rx)"
+					"left_wing.ty": "if(is_gliding, 0, if(limb_speed > 0.05 && var.is_crouching == 0, if(is_on_ground, sin(limb_swing) * limb_speed * 0.9, left_wing.ty), var.idle_rate + left_wing.ty))",
+					"right_wing.ty": "if(is_gliding, 0, if(limb_speed > 0.05 && var.is_crouching == 0, if(is_on_ground, sin(limb_swing) * limb_speed * 0.9, right_wing.ty), var.idle_rate + right_wing.ty))",
+					"left_wing.tz": "if(limb_speed > 0.05, limb_speed * -1.25 * move_forward, 0)",
+					"right_wing.tz": "if(limb_speed > 0.05, limb_speed * -1.25 * move_forward, 0)",
+					"left_wing.rx": "if(is_swimming, 0, left_wing.rx)",
+					"right_wing.rx": "if(is_swimming, 0, right_wing.rx)"
 				}
 			]
 		}

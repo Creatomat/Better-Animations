@@ -76,17 +76,17 @@
 					"var.rh_tz": "if(limb_speed > 0.05 && !is_swimming, limb_speed * -1.25, right_arm.tz) + if(death_time > 0, 5, 0)"
 				},
 				{
-					"var.ll_rx": "if(is_gliding, left_leg.rx, if(is_climbing, torad(-60) + sin(player_pos_y * 2.5) * 0.4, if(is_on_ground || is_riding || height_above_ground < 6 || fluid_depth_up > 2 || is_swimming, if(is_riding, torad(-90), if(is_swimming, left_leg.rx, (if(fluid_depth_up > 2, sin(var.swing) * limb_speed + sin(time * 0.1) * 0.2, sin(var.swing) * limb_speed)) + if(limb_speed < 0.05, left_leg.rx, 0))), var.flightcontrol)))",
+					"var.ll_rx": "if(is_gliding, left_leg.rx, if(is_climbing, torad(-60) + sin(player_pos_y * 2.5) * 0.4, if(is_on_ground || is_riding || height_above_ground < 6 || fluid_depth_up > 2 || is_swimming, if(is_riding, torad(-90), if(is_swimming, left_leg.rx, (if(fluid_depth_up > 2 , sin(var.swing) * limb_speed + sin(time * 0.1) * 0.2, sin(var.swing) * limb_speed)) + if(limb_speed < 0.05, left_leg.rx, 0))), var.flightcontrol)))",
 					"var.ll_ry": "if(is_gliding, left_leg.ry, if(death_time > 0, torad(90), left_leg.ry))",
-					"var.ll_rz": "if(is_gliding, left_leg.rz, if(is_on_ground || is_riding, if(is_swimming, sin(limb_swing * 0.24) * 0.4 + torad(-30), if(fluid_depth_up > 2, torad(-7) + left_leg.rz, left_leg.rz + torad(hurt_time * -6))), var.fall_rate * torad(-10) + left_leg.rz))",
+					"var.ll_rz": "if(is_gliding, left_leg.rz, if(is_on_ground || is_riding, left_leg.rz + torad(hurt_time * -6), var.fall_rate * torad(-10) + left_leg.rz))",
 					"var.rl_rx": "if(is_gliding, right_leg.rx, if(is_climbing, torad(-60) - sin(player_pos_y * 2.5) * 0.4, if(is_on_ground || is_riding || height_above_ground < 6 || fluid_depth_up > 2 || is_swimming, if(is_riding, torad(-90), if(is_swimming, right_leg.rx, (if(fluid_depth_up > 2, -(sin(var.swing) * limb_speed + sin(time * 0.1) * 0.2), -sin(var.swing) * limb_speed)) + if(limb_speed < 0.05, right_leg.rx, 0))), var.flightcontrol)))",
 					"var.rl_ry": "if(is_gliding, right_leg.ry, if(death_time > 0, torad(90), right_leg.ry))",
-					"var.rl_rz": "if(is_gliding, right_leg.rz, if(is_on_ground || is_riding, if(is_swimming, sin(limb_swing * 0.24) * -0.4 + torad(30), if(fluid_depth_up > 2, torad(7) + right_leg.rz, right_leg.rz + torad(hurt_time * 6))), var.fall_rate * torad(10) + right_leg.rz))",
-					"var.lh_rx": "if(death_time > 0, keyframe(death_time / 10, 0, torad(-50), torad(-180)), if(is_climbing, torad(-105) + sin(player_pos_y * 2.5) * 0.4, if(var.is_on_fire == 1, sin(-time * 0.6) * 0.8 * var.fall_rate, if(is_on_ground || height_above_ground < 6 || fluid_depth_up > 2, left_arm.rx, var.flightcontrol))))",
-					"var.lh_ry": "if(death_time > 0, torad(90), if(fluid_depth_up > 2, torad(-15) + left_arm.ry, left_arm.ry))",
+					"var.rl_rz": "if(is_gliding, right_leg.rz, if(is_on_ground || is_riding, right_leg.rz + torad(hurt_time * 6), var.fall_rate * torad(10) + right_leg.rz))",
+					"var.lh_rx": "if(death_time > 0, keyframe(death_time / 10, 0, torad(-50), torad(-180)), if(is_climbing, torad(-105) + sin(player_pos_y * 2.5) * 0.4, if(var.is_on_fire == 1, sin(-time * 0.6) * 0.8 * var.fall_rate, if(is_on_ground || height_above_ground < 6 || fluid_depth_up > 2, if(fluid_depth_up > 2 && is_holding_item_left == false && is_swimming == false, -sin(var.swing) * limb_speed + sin(time * 0.1) * 0.2, left_arm.rx), var.flightcontrol))))",
+					"var.lh_ry": "if(death_time > 0, torad(90), if(fluid_depth_up > 2, torad(-5) + left_arm.ry, left_arm.ry))",
 					"var.lh_rz": "if(var.is_on_fire == 1, torad(-150) + left_arm.rz, if(is_gliding, torad(-23), torad(hurt_time * -6) + if(var.jumping == 1, torad(-20) * clamp(height_above_ground * 0.4, 0, 1), left_arm.rz)))",
-					"var.rh_rx": "if(death_time > 0, keyframe(death_time / 10, 0, torad(-50), torad(-180)), if(is_climbing, torad(-105) - sin(player_pos_y * 2.5) * 0.4, if(var.is_on_fire == 1, sin(time * 0.6) * 0.8 * var.fall_rate, if(is_on_ground || height_above_ground < 6 || fluid_depth_up > 2, right_arm.rx, var.flightcontrol))))",
-					"var.rh_ry": "if(death_time > 0, torad(90), if(fluid_depth_up > 2, torad(15) + right_arm.ry, right_arm.ry))",
+					"var.rh_rx": "if(death_time > 0, keyframe(death_time / 10, 0, torad(-50), torad(-180)), if(is_climbing, torad(-105) - sin(player_pos_y * 2.5) * 0.4, if(var.is_on_fire == 1, sin(time * 0.6) * 0.8 * var.fall_rate, if(is_on_ground || height_above_ground < 6 || fluid_depth_up > 2, if(fluid_depth_up > 2 && is_holding_item_right == false && is_swimming == false, sin(var.swing) * limb_speed + sin(time * 0.1) * 0.2, right_arm.rx), var.flightcontrol))))",
+					"var.rh_ry": "if(death_time > 0, torad(90), if(fluid_depth_up > 2, torad(5) + right_arm.ry, right_arm.ry))",
 					"var.rh_rz": "if(var.is_on_fire == 1, torad(150) + right_arm.rz, if(is_gliding, torad(23), torad(hurt_time * 6) + if(var.jumping == 1, torad(20) * clamp(height_above_ground * 0.4, 0, 1), right_arm.rz)))"
 				},
 				{
